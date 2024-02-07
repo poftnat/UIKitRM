@@ -9,17 +9,19 @@
 /* Begin PBXBuildFile section */
 		4F892A0E2B74058F000C0783 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F892A0D2B74058F000C0783 /* AppDelegate.swift */; };
 		4F892A102B74058F000C0783 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F892A0F2B74058F000C0783 /* SceneDelegate.swift */; };
-		4F892A122B74058F000C0783 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F892A112B74058F000C0783 /* ViewController.swift */; };
+		4F892A122B74058F000C0783 /* AlertTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F892A112B74058F000C0783 /* AlertTaskViewController.swift */; };
 		4F892A172B740591000C0783 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F892A162B740591000C0783 /* Assets.xcassets */; };
+		4F892A252B742F86000C0783 /* Verdana-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F892A242B742F86000C0783 /* Verdana-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4F892A0A2B74058F000C0783 /* UIKitRM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitRM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F892A0D2B74058F000C0783 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F892A0F2B74058F000C0783 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4F892A112B74058F000C0783 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4F892A112B74058F000C0783 /* AlertTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTaskViewController.swift; sourceTree = "<group>"; };
 		4F892A162B740591000C0783 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F892A1B2B740591000C0783 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F892A242B742F86000C0783 /* Verdana-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Verdana-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,11 +56,20 @@
 			children = (
 				4F892A0D2B74058F000C0783 /* AppDelegate.swift */,
 				4F892A0F2B74058F000C0783 /* SceneDelegate.swift */,
-				4F892A112B74058F000C0783 /* ViewController.swift */,
+				4F892A112B74058F000C0783 /* AlertTaskViewController.swift */,
 				4F892A162B740591000C0783 /* Assets.xcassets */,
 				4F892A1B2B740591000C0783 /* Info.plist */,
+				4F892A232B742F34000C0783 /* Fonts */,
 			);
 			path = UIKitRM;
+			sourceTree = "<group>";
+		};
+		4F892A232B742F34000C0783 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4F892A242B742F86000C0783 /* Verdana-Bold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,6 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F892A172B740591000C0783 /* Assets.xcassets in Resources */,
+				4F892A252B742F86000C0783 /* Verdana-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,7 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F892A122B74058F000C0783 /* ViewController.swift in Sources */,
+				4F892A122B74058F000C0783 /* AlertTaskViewController.swift in Sources */,
 				4F892A0E2B74058F000C0783 /* AppDelegate.swift in Sources */,
 				4F892A102B74058F000C0783 /* SceneDelegate.swift in Sources */,
 			);
