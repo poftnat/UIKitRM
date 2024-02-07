@@ -18,7 +18,6 @@ class AlertTaskViewController: UIViewController {
     private lazy var greetingLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Verdana-Bold", size: 30)
-        label.text = "Приветствую, "
         label.textColor = .white
         label.frame = CGRect(x: 0, y: 37, width: view.frame.width, height: 82)
         label.textAlignment = .center
@@ -84,14 +83,11 @@ class AlertTaskViewController: UIViewController {
             preferredStyle: .alert
         )
         let action = UIAlertAction(title: "Готово", style: .default) { _ in
-            guard let text = alertController.textFields?.first?.text else {
+            if let text = alertController.textFields?.first?.text {
                 self.greetingLabel.isHidden = false
-                return self.greetingLabel.text = "Приветствую, !"
+                return self.greetingLabel.text = "Приветствую, \(text)!"
             }
-            self.greetingLabel.isHidden = false
-            return self.greetingLabel.text = text
         }
-
         alertController.addTextField()
         alertController.addAction(action)
         present(alertController, animated: true)
