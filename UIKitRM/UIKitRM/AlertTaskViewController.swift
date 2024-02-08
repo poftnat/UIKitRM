@@ -5,7 +5,7 @@ import UIKit
 
 /// Стартовый экран приложения
 class AlertTaskViewController: UIViewController {
-    // MARK: Private properties
+    // MARK: - Private Properties
 
     private lazy var backgroundImageView: UIImageView = {
         let imageView = UIImageView()
@@ -41,6 +41,7 @@ class AlertTaskViewController: UIViewController {
         button.titleLabel?.font = UIFont(name: "Verdana-Bold", size: 20)
         button.titleLabel?.numberOfLines = 0
         button.titleLabel?.textAlignment = .center
+        button.addTarget(self, action: #selector(startGuessNumberGame), for: .touchUpInside)
         return button
     }()
 
@@ -54,8 +55,11 @@ class AlertTaskViewController: UIViewController {
         button.layer.borderColor = CGColor(red: 59 / 255, green: 105 / 255, blue: 76 / 255, alpha: 1)
         button.setTitle("Калькулятор", for: .normal)
         button.titleLabel?.font = UIFont(name: "Verdana-Bold", size: 20)
+        button.addTarget(self, action: #selector(startCalculator), for: .touchUpInside)
         return button
     }()
+
+    // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,7 +71,7 @@ class AlertTaskViewController: UIViewController {
         setupGreetingAlert()
     }
 
-    // MARK: Private methods
+    // MARK: - Private Methods
 
     private func setupUI() {
         view.addSubview(backgroundImageView)
@@ -88,8 +92,113 @@ class AlertTaskViewController: UIViewController {
                 return self.greetingLabel.text = "Приветствую, \(text)!"
             }
         }
+
         alertController.addTextField()
         alertController.addAction(action)
         present(alertController, animated: true)
     }
+
+    @objc private func startGuessNumberGame() {
+        let alertController = UIAlertController(
+            title: "Угадай число от 1 до 10",
+            message: nil,
+            preferredStyle: .alert
+        )
+
+        let action = UIAlertAction(title: "ОК", style: .default) { [weak self] _ in
+            guard let number = alertController.textFields?.first?.text else { return }
+            if let number = Int(number) {
+                self?.showGameResult(number)
+            }
+        }
+
+        let cansel = UIAlertAction(title: "Отмена", style: .default)
+
+        alertController.addTextField()
+        alertController.addAction(cansel)
+        alertController.addAction(action)
+        alertController.preferredAction = action
+        present(alertController, animated: true)
+    }
+
+    private func showGameResult(_ number: Int) {
+        print("show game runs")
+        let randomNumber = 5
+        if Int(number) == randomNumber {
+            let alertController = UIAlertController(title: "Поздравляю!", message: "Вы угадали", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "ОК", style: .default) { [weak self] _ in
+                self?.startGuessNumberGame()
+            })
+            present(alertController, animated: true)
+        } else {
+            let alertController = UIAlertController(
+                title: "Упс!",
+                message: "Это неверный ответ",
+                preferredStyle: .alert
+            )
+            alertController.addAction(UIAlertAction(title: "ОК", style: .default))
+            present(alertController, animated: true)
+        }
+    }
+
+    @objc private func startCalculator() {
+        let alertController = UIAlertController(
+            title: "Введите ваши числа",
+            message: nil,
+            preferredStyle: .alert
+        )
+
+        let action = UIAlertAction(title: "Сложить", style: .default) { [weak self] _ in
+            guard let firstNumber = alertController.textFields?.first?.text,
+                  let secondNumber = alertController.textFields?[1].text else { return }
+            self?.showResultAlert(firstNumber, secondNumber)
+        }
+
+        let cansel = UIAlertAction(title: "Отмена", style: .default) { _ in
+        }
+
+        alertController.addTextField()
+        alertController.addTextField()
+        alertController.addAction(action)
+        alertController.addAction(cansel)
+        alertController.preferredAction = action
+        present(alertController, animated: true)
+    }
+
+    private func showResultAlert(_ firstNumber: String, _ secondNumber: String) {
+        guard let firstNumber = Int(firstNumber), let secondNumber = Int(secondNumber) else { return }
+        let result = firstNumber + secondNumber
+
+        let alertController = UIAlertController(
+            title: "Ваш результат",
+            message: "\(result)",
+            preferredStyle: .alert
+        )
+
+        let action = UIAlertAction(title: "Ок", style: .default)
+        let cansel = UIAlertAction(title: "Отмена", style: .default)
+        alertController.addAction(cansel)
+        alertController.addAction(action)
+        alertController.preferredAction = action
+        present(alertController, animated: true)
+    }
+
+//    private func chooseOperation(_ firstNumber: Int, _ secondNumber: Int) {
+//        let alertController = UIAlertController(
+//            title: "Выберите операцию",
+//            message: nil,
+//            preferredStyle: .alert
+//        )
+//        let addition = UIAlertAction(title: "Add", style: .default)
+//        let subtraction = UIAlertAction(title: "Add", style: .default)
+//        let multiplication = UIAlertAction(title: "Add", style: .default)
+//        let divisiion = UIAlertAction(title: "Add", style: .default)
+//        let cansel = UIAlertAction(title: "Отмена", style: .cancel)
+//        alertController.addAction(addition)
+//        alertController.addAction(subtraction)
+//        alertController.addAction(multiplication)
+//        alertController.addAction(divisiion)
+//        alertController.addAction(cansel)
+//        present(alertController, animated: true)
+//    }
 }
