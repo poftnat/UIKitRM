@@ -4,7 +4,7 @@
 import UIKit
 
 final class WordTurningView: UIView {
-    private lazy var startButton: UIButton = {
+    lazy var startButton: UIButton = {
         let button = UIButton()
         button.frame = CGRect(x: 20, y: 406, width: 335, height: 44)
         button.backgroundColor = UIColor(red: 76 / 255, green: 216 / 255, blue: 102 / 255, alpha: 1)
@@ -13,7 +13,7 @@ final class WordTurningView: UIView {
         return button
     }()
 
-    private lazy var inputTextHeaderLabel: UILabel = {
+    lazy var inputTextHeaderLabel: UILabel = {
         let label = UILabel()
         label.frame = CGRect(x: 50, y: 106, width: 275, height: 57)
         label.text = "Вы ввели слово:"
@@ -21,7 +21,7 @@ final class WordTurningView: UIView {
         return label
     }()
 
-    private lazy var inputTextLabel: UILabel = {
+    lazy var inputTextLabel: UILabel = {
         let label = UILabel()
         label.frame = CGRect(x: 50, y: 206, width: 275, height: 57)
         label.text = "some"
@@ -29,7 +29,7 @@ final class WordTurningView: UIView {
         return label
     }()
 
-    private lazy var outputTextHeaderLabel: UILabel = {
+    lazy var outputTextHeaderLabel: UILabel = {
         let label = UILabel()
         label.frame = CGRect(x: 50, y: 306, width: 275, height: 57)
         label.text = "А вот что получится, если читать справа налево"
@@ -38,7 +38,7 @@ final class WordTurningView: UIView {
         return label
     }()
 
-    private lazy var outputTextLabel: UILabel = {
+    lazy var outputTextLabel: UILabel = {
         let label = UILabel()
         label.frame = CGRect(x: 50, y: 406, width: 275, height: 57)
         label.text = "some"
@@ -68,7 +68,6 @@ final class WordTurningView: UIView {
     }
 
     @objc func startWordTurningAction() {
-        print("thththth")
         onStartWordTurningActionHandler?()
     }
 }
