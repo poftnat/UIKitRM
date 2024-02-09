@@ -5,6 +5,8 @@ import UIKit
 
 /// Вью для WordTurningViewController
 final class WordTurningView: UIView {
+    // MARK: - Public Properties
+
     lazy var startButton: UIButton = {
         let button = UIButton()
         button.frame = CGRect(x: 20, y: 406, width: 335, height: 44)
@@ -17,7 +19,8 @@ final class WordTurningView: UIView {
     lazy var inputTextHeaderLabel: UILabel = {
         let label = UILabel()
         label.frame = CGRect(x: 50, y: 106, width: 275, height: 57)
-        label.text = "Вы ввели слово:"
+        label.text = "Вы ввели слово"
+        label.font = UIFont(name: "Verdana-Bold", size: 16)
         label.textAlignment = .center
         label.isHidden = true
         return label
@@ -26,7 +29,8 @@ final class WordTurningView: UIView {
     lazy var inputTextLabel: UILabel = {
         let label = UILabel()
         label.frame = CGRect(x: 50, y: 206, width: 275, height: 57)
-        label.text = "some"
+        label.font = UIFont(name: "Verdana-BoldItalic", size: 16)
+        label.textColor = UIColor(red: 0 / 255, green: 0 / 255, blue: 0 / 255, alpha: 0.2)
         label.textAlignment = .center
         label.isHidden = true
         return label
@@ -36,6 +40,7 @@ final class WordTurningView: UIView {
         let label = UILabel()
         label.frame = CGRect(x: 50, y: 306, width: 275, height: 57)
         label.text = "А вот что получится, если читать справа налево"
+        label.font = UIFont(name: "Verdana-Bold", size: 16)
         label.textAlignment = .center
         label.numberOfLines = 0
         label.isHidden = true
@@ -45,7 +50,8 @@ final class WordTurningView: UIView {
     lazy var outputTextLabel: UILabel = {
         let label = UILabel()
         label.frame = CGRect(x: 50, y: 406, width: 275, height: 57)
-        label.text = "some"
+        label.font = UIFont(name: "Verdana-BoldItalic", size: 16)
+        label.textColor = UIColor(red: 0 / 255, green: 0 / 255, blue: 0 / 255, alpha: 0.2)
         label.textAlignment = .center
         label.isHidden = true
         return label
@@ -63,6 +69,8 @@ final class WordTurningView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: - Private Methods
+
     private func setupUI() {
         backgroundColor = .white
         addSubview(startButton)
@@ -72,7 +80,7 @@ final class WordTurningView: UIView {
         addSubview(outputTextLabel)
     }
 
-    @objc func startWordTurningAction() {
+    @objc private func startWordTurningAction() {
         onStartWordTurningActionHandler?()
     }
 }

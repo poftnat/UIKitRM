@@ -12,6 +12,8 @@
 		4F892A122B74058F000C0783 /* WordTurningController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F892A112B74058F000C0783 /* WordTurningController.swift */; };
 		4F892A172B740591000C0783 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F892A162B740591000C0783 /* Assets.xcassets */; };
 		4F892A292B753AEB000C0783 /* WordTurningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F892A282B753AEB000C0783 /* WordTurningView.swift */; };
+		4FA8FDB42B7605FF000CD802 /* Verdana-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA8FDB32B7605FE000CD802 /* Verdana-Bold.ttf */; };
+		4FA8FDBB2B7606E5000CD802 /* Verdana-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA8FDB92B7606E5000CD802 /* Verdana-BoldItalic.ttf */; };
 		4FF11F382B75C4B400363E1E /* WordTurningModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF11F372B75C4B400363E1E /* WordTurningModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +25,8 @@
 		4F892A162B740591000C0783 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F892A1B2B740591000C0783 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F892A282B753AEB000C0783 /* WordTurningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordTurningView.swift; sourceTree = "<group>"; };
+		4FA8FDB32B7605FE000CD802 /* Verdana-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Verdana-Bold.ttf"; sourceTree = "<group>"; };
+		4FA8FDB92B7606E5000CD802 /* Verdana-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Verdana-BoldItalic.ttf"; sourceTree = "<group>"; };
 		4FF11F372B75C4B400363E1E /* WordTurningModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordTurningModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,8 +67,18 @@
 				4F892A282B753AEB000C0783 /* WordTurningView.swift */,
 				4F892A162B740591000C0783 /* Assets.xcassets */,
 				4F892A1B2B740591000C0783 /* Info.plist */,
+				4FA8FDB22B7605D6000CD802 /* Fonts */,
 			);
 			path = UIKitRM;
+			sourceTree = "<group>";
+		};
+		4FA8FDB22B7605D6000CD802 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4FA8FDB92B7606E5000CD802 /* Verdana-BoldItalic.ttf */,
+				4FA8FDB32B7605FE000CD802 /* Verdana-Bold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +142,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F892A172B740591000C0783 /* Assets.xcassets in Resources */,
+				4FA8FDB42B7605FF000CD802 /* Verdana-Bold.ttf in Resources */,
+				4FA8FDBB2B7606E5000CD802 /* Verdana-BoldItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

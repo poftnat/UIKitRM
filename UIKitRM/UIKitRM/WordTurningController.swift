@@ -24,12 +24,12 @@ final class WordTurningViewController: UIViewController {
 
     // MARK: - Private Methods
 
-    @objc func startWordTurningAction() {
+    @objc private func startWordTurningAction() {
         let alertController = UIAlertController(title: "Введите ваше слово", message: nil, preferredStyle: .alert)
         alertController.addTextField()
-        let action = UIAlertAction(title: "OK", style: .default) { _ in
+        let action = UIAlertAction(title: "Oк", style: .default) { _ in
             guard let text = alertController.textFields?.first?.text else { return }
-            self.wordTurningView.startButton.frame = CGRect(x: 20, y: 700, width: 335, height: 44)
+            self.wordTurningView.startButton.frame = CGRect(x: 20, y: 598, width: 335, height: 44)
             self.wordTurningView.inputTextHeaderLabel.isHidden = false
             self.wordTurningView.inputTextLabel.isHidden = false
             self.wordTurningView.outputTextHeaderLabel.isHidden = false
@@ -39,9 +39,10 @@ final class WordTurningViewController: UIViewController {
             self.wordTurningView.outputTextLabel.text = String(wordTurningModel.reversedText)
         }
 
-        let cancel = UIAlertAction(title: "FFF", style: .default)
+        let cancel = UIAlertAction(title: "Отмена", style: .default)
         alertController.addAction(action)
         alertController.addAction(cancel)
+        alertController.preferredAction = action
         present(alertController, animated: true)
     }
 }
