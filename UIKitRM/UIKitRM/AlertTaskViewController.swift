@@ -10,6 +10,7 @@ final class AlertTaskViewController: UIViewController {
     private lazy var backgroundImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+        imageView.backgroundColor = .red
         imageView.image = UIImage(named: "Background")
         imageView.backgroundColor = .white
         return imageView
@@ -19,9 +20,10 @@ final class AlertTaskViewController: UIViewController {
         let label = UILabel()
         label.font = UIFont(name: "Verdana-Bold", size: 24)
         label.textColor = .white
-        label.frame = CGRect(x: 30, y: 14, width: 300, height: 57)
+        label.frame = CGRect(x: 50, y: 14, width: 300, height: 57)
         label.textAlignment = .center
         label.numberOfLines = 0
+        label.adjustsFontSizeToFitWidth = true
         label.isHidden = true
         return label
     }()
