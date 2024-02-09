@@ -26,7 +26,6 @@ final class WordTurningViewController: UIViewController {
 
     @objc private func startWordTurningAction() {
         let alertController = UIAlertController(title: "Введите ваше слово", message: nil, preferredStyle: .alert)
-        alertController.addTextField()
         let action = UIAlertAction(title: "Oк", style: .default) { _ in
             guard let text = alertController.textFields?.first?.text else { return }
             self.wordTurningView.startButton.frame = CGRect(x: 20, y: 598, width: 335, height: 44)
@@ -40,6 +39,8 @@ final class WordTurningViewController: UIViewController {
         }
 
         let cancel = UIAlertAction(title: "Отмена", style: .default)
+        alertController.addTextField()
+        alertController.textFields?[0].placeholder = "Введите слово"
         alertController.addAction(action)
         alertController.addAction(cancel)
         alertController.preferredAction = action
