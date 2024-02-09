@@ -169,6 +169,7 @@ final class AlertTaskViewController: UIViewController {
 
         alertController.addTextField()
         alertController.addTextField()
+        alertController.textFields?.first?.placeholder = "Число 1"
         alertController.addAction(action)
         alertController.addAction(cansel)
         alertController.preferredAction = action
