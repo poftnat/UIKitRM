@@ -3,8 +3,8 @@
 
 import UIKit
 
-/// Стартовый экран приложения
-class AlertTaskViewController: UIViewController {
+/// Стартовый экран приложения.
+final class AlertTaskViewController: UIViewController {
     // MARK: - Private Properties
 
     private lazy var backgroundImageView: UIImageView = {
@@ -108,7 +108,7 @@ class AlertTaskViewController: UIViewController {
         let action = UIAlertAction(title: "ОК", style: .default) { [weak self] _ in
             guard let number = alertController.textFields?.first?.text else { return }
             if let number = Int(number) {
-                self?.showGameResult(number)
+                self?.showGameResultAlert(number)
             }
         }
 
@@ -121,9 +121,8 @@ class AlertTaskViewController: UIViewController {
         present(alertController, animated: true)
     }
 
-    private func showGameResult(_ number: Int) {
-        print("show game runs")
-        let randomNumber = 5
+    private func showGameResultAlert(_ number: Int) {
+        let randomNumber = Int.random(in: 1 ... 10)
         if Int(number) == randomNumber {
             let alertController = UIAlertController(title: "Поздравляю!", message: "Вы угадали", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "ОК", style: .default) { [weak self] _ in
@@ -182,23 +181,4 @@ class AlertTaskViewController: UIViewController {
         alertController.preferredAction = action
         present(alertController, animated: true)
     }
-
-//    private func chooseOperation(_ firstNumber: Int, _ secondNumber: Int) {
-//        let alertController = UIAlertController(
-//            title: "Выберите операцию",
-//            message: nil,
-//            preferredStyle: .alert
-//        )
-//        let addition = UIAlertAction(title: "Add", style: .default)
-//        let subtraction = UIAlertAction(title: "Add", style: .default)
-//        let multiplication = UIAlertAction(title: "Add", style: .default)
-//        let divisiion = UIAlertAction(title: "Add", style: .default)
-//        let cansel = UIAlertAction(title: "Отмена", style: .cancel)
-//        alertController.addAction(addition)
-//        alertController.addAction(subtraction)
-//        alertController.addAction(multiplication)
-//        alertController.addAction(divisiion)
-//        alertController.addAction(cansel)
-//        present(alertController, animated: true)
-//    }
 }
