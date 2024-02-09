@@ -3,6 +3,7 @@
 
 import UIKit
 
+/// Вью для WordTurningViewController
 final class WordTurningView: UIView {
     lazy var startButton: UIButton = {
         let button = UIButton()
@@ -18,6 +19,7 @@ final class WordTurningView: UIView {
         label.frame = CGRect(x: 50, y: 106, width: 275, height: 57)
         label.text = "Вы ввели слово:"
         label.textAlignment = .center
+        label.isHidden = true
         return label
     }()
 
@@ -26,6 +28,7 @@ final class WordTurningView: UIView {
         label.frame = CGRect(x: 50, y: 206, width: 275, height: 57)
         label.text = "some"
         label.textAlignment = .center
+        label.isHidden = true
         return label
     }()
 
@@ -35,6 +38,7 @@ final class WordTurningView: UIView {
         label.text = "А вот что получится, если читать справа налево"
         label.textAlignment = .center
         label.numberOfLines = 0
+        label.isHidden = true
         return label
     }()
 
@@ -43,6 +47,7 @@ final class WordTurningView: UIView {
         label.frame = CGRect(x: 50, y: 406, width: 275, height: 57)
         label.text = "some"
         label.textAlignment = .center
+        label.isHidden = true
         return label
     }()
 

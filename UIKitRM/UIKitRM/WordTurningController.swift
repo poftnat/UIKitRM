@@ -3,7 +3,7 @@
 
 import UIKit
 
-/// Стартовый экран приложения
+/// Контроллер стартового MVC
 final class WordTurningViewController: UIViewController {
     // MARK: - Private Properties
 
@@ -28,7 +28,15 @@ final class WordTurningViewController: UIViewController {
         let alertController = UIAlertController(title: "Введите ваше слово", message: nil, preferredStyle: .alert)
         alertController.addTextField()
         let action = UIAlertAction(title: "OK", style: .default) { _ in
-            let text = alertController.textFields?.first?.text
+            guard let text = alertController.textFields?.first?.text else { return }
+            self.wordTurningView.startButton.frame = CGRect(x: 20, y: 700, width: 335, height: 44)
+            self.wordTurningView.inputTextHeaderLabel.isHidden = false
+            self.wordTurningView.inputTextLabel.isHidden = false
+            self.wordTurningView.outputTextHeaderLabel.isHidden = false
+            self.wordTurningView.outputTextLabel.isHidden = false
+            let wordTurningModel = WordTurningModel(plainText: text)
+            self.wordTurningView.inputTextLabel.text = wordTurningModel.plainText
+            self.wordTurningView.outputTextLabel.text = String(wordTurningModel.reversedText)
         }
 
         let cancel = UIAlertAction(title: "FFF", style: .default)

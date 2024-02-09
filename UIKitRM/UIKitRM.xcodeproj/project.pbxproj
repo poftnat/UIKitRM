@@ -12,6 +12,7 @@
 		4F892A122B74058F000C0783 /* WordTurningController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F892A112B74058F000C0783 /* WordTurningController.swift */; };
 		4F892A172B740591000C0783 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F892A162B740591000C0783 /* Assets.xcassets */; };
 		4F892A292B753AEB000C0783 /* WordTurningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F892A282B753AEB000C0783 /* WordTurningView.swift */; };
+		4FF11F382B75C4B400363E1E /* WordTurningModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF11F372B75C4B400363E1E /* WordTurningModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		4F892A162B740591000C0783 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F892A1B2B740591000C0783 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F892A282B753AEB000C0783 /* WordTurningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordTurningView.swift; sourceTree = "<group>"; };
+		4FF11F372B75C4B400363E1E /* WordTurningModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordTurningModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				4F892A0D2B74058F000C0783 /* AppDelegate.swift */,
 				4F892A0F2B74058F000C0783 /* SceneDelegate.swift */,
 				4F892A112B74058F000C0783 /* WordTurningController.swift */,
+				4FF11F372B75C4B400363E1E /* WordTurningModel.swift */,
 				4F892A282B753AEB000C0783 /* WordTurningView.swift */,
 				4F892A162B740591000C0783 /* Assets.xcassets */,
 				4F892A1B2B740591000C0783 /* Info.plist */,
@@ -181,6 +184,7 @@
 				4F892A122B74058F000C0783 /* WordTurningController.swift in Sources */,
 				4F892A0E2B74058F000C0783 /* AppDelegate.swift in Sources */,
 				4F892A292B753AEB000C0783 /* WordTurningView.swift in Sources */,
+				4FF11F382B75C4B400363E1E /* WordTurningModel.swift in Sources */,
 				4F892A102B74058F000C0783 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
