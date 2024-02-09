@@ -105,6 +105,7 @@ final class AlertTaskViewController: UIViewController {
         }
 
         alertController.addTextField()
+        alertController.textFields?[0].placeholder = "Введите ваше имя"
         alertController.addAction(action)
         present(alertController, animated: true)
     }
@@ -126,6 +127,7 @@ final class AlertTaskViewController: UIViewController {
         let cansel = UIAlertAction(title: "Отмена", style: .default)
 
         alertController.addTextField()
+        alertController.textFields?[0].placeholder = "Введите число"
         alertController.addAction(cansel)
         alertController.addAction(action)
         alertController.preferredAction = action
@@ -169,7 +171,8 @@ final class AlertTaskViewController: UIViewController {
 
         alertController.addTextField()
         alertController.addTextField()
-        alertController.textFields?.first?.placeholder = "Число 1"
+        alertController.textFields?[0].placeholder = "Число 1"
+        alertController.textFields?[1].placeholder = "Число 2"
         alertController.addAction(action)
         alertController.addAction(cansel)
         alertController.preferredAction = action
