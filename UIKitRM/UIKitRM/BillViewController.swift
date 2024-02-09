@@ -7,7 +7,18 @@ import UIKit
 class BillViewController: UIViewController {
     // MARK: - IBOutlets
 
+    var contr = MainMenuViewController()
+
+    @IBOutlet var tipsSwitcher: UISwitch!
     @IBOutlet var countButton: UIButton!
+
+    @IBAction func addTipsAction(_ sender: UISwitch) {
+        if tipsSwitcher.isOn {
+            countButton.setTitle("Итого 770 рублей вместе с чаевыми", for: .normal)
+        } else {
+            countButton.setTitle("Итого 770", for: .normal)
+        }
+    }
 
     // MARK: - Private Methods
 

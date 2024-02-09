@@ -378,10 +378,39 @@
                                     </segue>
                                 </connections>
                             </button>
+                            <button opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Pj-RV-HU4">
+                                <rect key="frame" x="20" y="720" width="352" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="" cornerStyle="fixed">
+                                    <backgroundConfiguration key="background" cornerRadius="12" strokeWidth="3">
+                                        <color key="backgroundColor" red="0.90768932360204901" green="0.94329648752254103" blue="0.97158742754545457" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="pay:" destination="Nwz-oN-gK3" eventType="touchUpInside" id="H9v-ef-s7r"/>
+                                </connections>
+                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image-2" translatesAutoresizingMaskIntoConstraints="NO" id="Qk5-19-LyL">
                                 <rect key="frame" x="30" y="369" width="335" height="280"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Оставить чаевые 10%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGh-k4-3uI">
+                                <rect key="frame" x="29" y="723" width="187" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="umT-oB-Q2h">
+                                <rect key="frame" x="311" y="727" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="addTipsAction:" destination="Nwz-oN-gK3" eventType="valueChanged" id="tnB-WB-SaR"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JNT-WE-KVd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -396,11 +425,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="countButton" destination="k2Z-H2-H5T" id="hub-xf-IOb"/>
+                        <outlet property="tipsSwitcher" destination="umT-oB-Q2h" id="l6B-S8-K5c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SaR-on-4OJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2704.5801526717555" y="-2.1126760563380285"/>
+            <point key="canvasLocation" x="2703.0769230769229" y="-2.1327014218009479"/>
         </scene>
         <!--Closing View Controller-->
         <scene sceneID="xnH-jQ-1Eo">
@@ -452,7 +482,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z5B-kn-fdL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="pAs-W6-mVf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3536.9230769230767" y="-2.1327014218009479"/>
+            <point key="canvasLocation" x="3540" y="-2"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="b6P-vS-bHo">
