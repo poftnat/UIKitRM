@@ -10,6 +10,8 @@ final class WordTurningView: UIView {
     lazy var startButton: UIButton = {
         let button = UIButton()
         button.frame = CGRect(x: 20, y: 406, width: 335, height: 44)
+        button.layer.cornerRadius = 12
+        button.clipsToBounds = true
         button.backgroundColor = UIColor(red: 76 / 255, green: 216 / 255, blue: 102 / 255, alpha: 1)
         button.setTitle("Начать", for: .normal)
         button.addTarget(self, action: #selector(startWordTurningAction), for: .touchUpInside)
