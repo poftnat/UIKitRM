@@ -5,18 +5,27 @@ import UIKit
 
 /// Класс основного меню приложения.
 class MainMenuViewController: UIViewController {
-    @IBOutlet var issueBillButton: UIButton!
+    // MARK: - IBOutlets
 
-    @IBAction func issueBillAction(_ sender: Any) {
-        print("dfdf")
+    @IBOutlet var clubCardSwitcher: UISwitch!
+    @IBOutlet var issueBillButton: UIButton!
+    @IBOutlet var salesLabel: UILabel!
+
+    // MARK: - Private Methods
+
+    @IBAction private func clubCardSwitcherAction(_ sender: UISwitch) {
+        salesLabel.isHidden = !salesLabel.isHidden
+    }
+
+    @IBAction private func issueBillAction(_ sender: Any) {
         let alertController = UIAlertController(title: "Выставить счет?", message: nil, preferredStyle: .alert)
         let cancel = UIAlertAction(title: "Отмена", style: .default)
-        let bill = UIAlertAction(title: "Чек", style: .default)
+        let bill = UIAlertAction(title: "Чек", style: .default) { _ in
+            self.performSegue(withIdentifier: "BillSegue", sender: nil)
+        }
         alertController.addAction(cancel)
         alertController.addAction(bill)
         alertController.preferredAction = bill
         present(alertController, animated: true)
     }
 }
-
-func addAction(title: String?, message: String?, style: UIAlertViewStyle) {}
