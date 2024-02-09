@@ -10,7 +10,6 @@ final class AlertTaskViewController: UIViewController {
     private lazy var backgroundImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
-        imageView.backgroundColor = .red
         imageView.image = UIImage(named: "Background")
         imageView.backgroundColor = .white
         return imageView
@@ -20,23 +19,15 @@ final class AlertTaskViewController: UIViewController {
         let label = UILabel()
         label.font = UIFont(name: "Verdana-Bold", size: 24)
         label.textColor = .white
-        label.frame = CGRect(x: 50, y: 14, width: 300, height: 57)
+        label.frame = CGRect(x: 0, y: 37, width: view.frame.width, height: 82)
+        label.backgroundColor = UIColor(red: 151 / 255, green: 203 / 255, blue: 229 / 255, alpha: 1)
+        label.layer.borderColor = CGColor(red: 255 / 255, green: 255 / 255, blue: 255 / 255, alpha: 1)
+        label.layer.borderWidth = 1
         label.textAlignment = .center
-        label.numberOfLines = 0
+        label.numberOfLines = 2
         label.adjustsFontSizeToFitWidth = true
         label.isHidden = true
         return label
-    }()
-
-    private lazy var greetingLabelBackgroundView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.frame = CGRect(x: 0, y: 37, width: view.frame.width, height: 82)
-        imageView.backgroundColor = UIColor(red: 151 / 255, green: 203 / 255, blue: 229 / 255, alpha: 1)
-        imageView.layer.borderColor = CGColor(red: 255 / 255, green: 255 / 255, blue: 255 / 255, alpha: 1)
-        imageView.layer.borderWidth = 1
-        imageView.isHidden = true
-        imageView.addSubview(greetingLabel)
-        return imageView
     }()
 
     private lazy var guessNumberButton: UIButton = {
@@ -87,7 +78,7 @@ final class AlertTaskViewController: UIViewController {
         view.addSubview(backgroundImageView)
         view.addSubview(guessNumberButton)
         view.addSubview(calculatorButton)
-        view.addSubview(greetingLabelBackgroundView)
+        view.addSubview(greetingLabel)
     }
 
     private func setupGreetingAlert() {
@@ -98,7 +89,6 @@ final class AlertTaskViewController: UIViewController {
         )
         let action = UIAlertAction(title: "Готово", style: .default) { _ in
             if let text = alertController.textFields?.first?.text {
-                self.greetingLabelBackgroundView.isHidden = false
                 self.greetingLabel.isHidden = false
                 return self.greetingLabel.text = "Приветствую,\n\(text)!"
             }
