@@ -147,13 +147,13 @@ final class AlertTaskViewController: UIViewController {
             preferredStyle: .alert
         )
 
-        let action = UIAlertAction(title: "Сложить", style: .default) { [weak self] _ in
+        let action = UIAlertAction(title: "Сложить          ", style: .default) { [weak self] _ in
             guard let firstNumber = alertController.textFields?.first?.text,
                   let secondNumber = alertController.textFields?[1].text else { return }
             self?.showResultAlert(firstNumber, secondNumber)
         }
 
-        let cansel = UIAlertAction(title: "Отмена", style: .default) { _ in
+        let cansel = UIAlertAction(title: "Отмена           ", style: .default) { _ in
         }
 
         alertController.addTextField()
