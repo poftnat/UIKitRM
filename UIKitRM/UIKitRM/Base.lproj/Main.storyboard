@@ -170,8 +170,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Кафе Алиса" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOc-xK-YhE">
-                                <rect key="frame" x="100" y="60" width="190" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Кафе Алиса" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOc-xK-YhE">
+                                <rect key="frame" x="86" y="60" width="209" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -264,11 +265,6 @@
                         <accessibility key="accessibilityConfiguration">
                             <accessibilityTraits key="traits" notEnabled="YES"/>
                         </accessibility>
-                        <constraints>
-                            <constraint firstItem="lOc-xK-YhE" firstAttribute="leading" secondItem="hY9-ge-kca" secondAttribute="leading" constant="100" id="EsH-8v-C94"/>
-                            <constraint firstItem="lOc-xK-YhE" firstAttribute="top" secondItem="hY9-ge-kca" secondAttribute="top" constant="5" id="Yoe-Ur-B4T"/>
-                            <constraint firstAttribute="trailing" secondItem="lOc-xK-YhE" secondAttribute="trailing" constant="100" id="mgH-Wd-OXG"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FW4-Hg-0aB"/>
                     <connections>
@@ -289,8 +285,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Чек" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jBr-6A-MVi">
-                                <rect key="frame" x="100" y="60" width="190" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Чек" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jBr-6A-MVi">
+                                <rect key="frame" x="100" y="55" width="190" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -372,7 +368,7 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="16"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="pay:" destination="Nwz-oN-gK3" eventType="touchUpInside" id="I5O-gD-h5m"/>
+                                    <action selector="payAction:" destination="Nwz-oN-gK3" eventType="touchUpInside" id="p6H-E9-kgt"/>
                                     <segue destination="8aW-df-yAW" kind="popoverPresentation" identifier="ClosingSegue" popoverAnchorView="k2Z-H2-H5T" id="m9g-bW-eV4">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
@@ -430,7 +426,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SaR-on-4OJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2703.0769230769229" y="-2.1327014218009479"/>
+            <point key="canvasLocation" x="2703" y="-2"/>
         </scene>
         <!--Closing View Controller-->
         <scene sceneID="xnH-jQ-1Eo">

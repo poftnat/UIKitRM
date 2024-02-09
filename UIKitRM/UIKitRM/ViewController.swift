@@ -4,16 +4,16 @@
 import UIKit
 
 /// Стартовый экран приложения
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     // MARK: - IBOutlets
 
-    @IBOutlet var loginTextField: UITextField!
+    @IBOutlet private var loginTextField: UITextField!
 
-    @IBOutlet var passwordTextField: UITextField!
+    @IBOutlet private var passwordTextField: UITextField!
 
-    @IBOutlet var hidePasswordButton: UIButton!
+    @IBOutlet private var hidePasswordButton: UIButton!
 
-    @IBOutlet var loginButton: UIButton!
+    @IBOutlet private var loginButton: UIButton!
 
     // MARK: - Life Cycle
 
@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         loginTextField.delegate = self
     }
 
-    // MARK: - Private Methods
+    // MARK: - IBAction
 
     @IBAction private func enterAction(_ sender: UIButton) {}
 
@@ -35,5 +35,25 @@ class ViewController: UIViewController {
             hidePasswordButton.setImage(UIImage(systemName: "eye.slash.fill"), for: .normal)
             passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
         }
+    }
+}
+
+// MARK: Extension - UITextFieldDelegate
+
+extension ViewController: UITextFieldDelegate {
+    public func textField(
+        _ textField: UITextField,
+        shouldChangeCharactersIn range: NSRange,
+        replacementString string: String
+    ) -> Bool {
+        let login = loginTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        if password.count > 3, login.count > 3 {
+            loginButton.isUserInteractionEnabled = true
+            UIView.animate(withDuration: 0) {
+                self.loginButton.alpha = 1
+            }
+        }
+        return true
     }
 }

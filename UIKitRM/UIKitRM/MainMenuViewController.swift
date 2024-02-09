@@ -4,7 +4,7 @@
 import UIKit
 
 /// Класс основного меню приложения.
-class MainMenuViewController: UIViewController {
+final class MainMenuViewController: UIViewController {
     // MARK: - IBOutlets
 
     @IBOutlet var clubCardSwitcher: UISwitch!
