@@ -14,7 +14,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     ) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = .init(windowScene: windowScene)
-        window?.rootViewController = EntryViewController()
+        let entryController = EntryViewController()
+        let navigationController = UINavigationController(rootViewController: entryController)
+        navigationController.navigationBar.backgroundColor = .clear
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
 

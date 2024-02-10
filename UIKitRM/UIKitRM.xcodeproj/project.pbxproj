@@ -12,6 +12,8 @@
 		4F892A122B74058F000C0783 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F892A112B74058F000C0783 /* EntryViewController.swift */; };
 		4F892A172B740591000C0783 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F892A162B740591000C0783 /* Assets.xcassets */; };
 		4FA8FDBF2B76AD36000CD802 /* Verdana-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA8FDBE2B76AD36000CD802 /* Verdana-Bold.ttf */; };
+		4FA8FDC12B76CF99000CD802 /* BirthdayListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA8FDC02B76CF99000CD802 /* BirthdayListViewController.swift */; };
+		4FA8FDC32B76F635000CD802 /* AddBirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA8FDC22B76F635000CD802 /* AddBirthdayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		4F892A162B740591000C0783 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F892A1B2B740591000C0783 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FA8FDBE2B76AD36000CD802 /* Verdana-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Verdana-Bold.ttf"; sourceTree = "<group>"; };
+		4FA8FDC02B76CF99000CD802 /* BirthdayListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayListViewController.swift; sourceTree = "<group>"; };
+		4FA8FDC22B76F635000CD802 /* AddBirthdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBirthdayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 				4F892A0D2B74058F000C0783 /* AppDelegate.swift */,
 				4F892A0F2B74058F000C0783 /* SceneDelegate.swift */,
 				4F892A112B74058F000C0783 /* EntryViewController.swift */,
+				4FA8FDC02B76CF99000CD802 /* BirthdayListViewController.swift */,
+				4FA8FDC22B76F635000CD802 /* AddBirthdayViewController.swift */,
 				4F892A162B740591000C0783 /* Assets.xcassets */,
 				4F892A1B2B740591000C0783 /* Info.plist */,
 				4FA8FDBD2B76AD0B000CD802 /* Fonts */,
@@ -188,7 +194,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F892A122B74058F000C0783 /* EntryViewController.swift in Sources */,
+				4FA8FDC32B76F635000CD802 /* AddBirthdayViewController.swift in Sources */,
 				4F892A0E2B74058F000C0783 /* AppDelegate.swift in Sources */,
+				4FA8FDC12B76CF99000CD802 /* BirthdayListViewController.swift in Sources */,
 				4F892A102B74058F000C0783 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

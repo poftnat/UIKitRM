@@ -29,7 +29,7 @@ class EntryViewController: UIViewController {
         let label = UILabel()
         label.frame = CGRect(x: 20, y: 266, width: 175, height: 31)
         label.text = "Sign in"
-        label.font = UIFont(name: "Verdana-Bold", size: 18)
+        label.font = UIFont(name: "Verdana-Bold", size: 26)
         label.textColor = .raspberryAccent
         return label
     }()
@@ -85,26 +85,45 @@ class EntryViewController: UIViewController {
         button.frame = CGRect(x: 20, y: 671, width: 335, height: 44)
         button.backgroundColor = .raspberryAccent.withAlphaComponent(0.4)
         button.layer.cornerRadius = 12
-//        button.clipsToBounds = true
         button.setTitle("Login", for: .normal)
         button.titleLabel?.font = UIFont(name: "Verdana-Bold", size: 16)
         button.isUserInteractionEnabled = false
+        button.addTarget(self, action: #selector(moveForward), for: .touchUpInside)
         return button
     }()
+
+    private lazy var faceIDLabel: UILabel = {
+        let label = UILabel()
+        label.frame = CGRect(x: 86, y: 544, width: 150, height: 35)
+        label.text = "Use FaceID"
+        label.font = UIFont(name: "Verdana-Bold", size: 16)
+        label.isHidden = true
+        return label
+    }()
+
+    private lazy var faceIDSwitcher: UISwitch = {
+        let switcher = UISwitch()
+        switcher.frame = CGRect(x: 270, y: 546, width: 31, height: 31)
+        switcher.isHidden = true
+        return switcher
+    }()
+
+    private lazy var loginBorderView = setBorderLineView(20, 372)
+    private lazy var passwordBorderView = setBorderLineView(20, 448)
 
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        passwordTextField.delegate = self
+        loginTextField.delegate = self
     }
 
     // MARK: - Private Methods
 
     private func setupUI() {
         view.backgroundColor = .white
-        let loginBorderView = setBorderLineView(20, 372)
-        let passwordBorderView = setBorderLineView(20, 448)
 
         [
             logoImageView,
@@ -117,7 +136,9 @@ class EntryViewController: UIViewController {
             hidePasswordButton,
             loginButton,
             loginBorderView,
-            passwordBorderView
+            passwordBorderView,
+            faceIDLabel,
+            faceIDSwitcher
         ].forEach { view.addSubview($0) }
     }
 
@@ -137,6 +158,11 @@ class EntryViewController: UIViewController {
             passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
         }
     }
+
+    @objc private func moveForward() {
+        let controllerToMove = BirthdayListViewController()
+        navigationController?.pushViewController(controllerToMove, animated: true)
+    }
 }
 
 extension EntryViewController: UITextFieldDelegate {
@@ -147,27 +173,34 @@ extension EntryViewController: UITextFieldDelegate {
     ) -> Bool {
         let login = loginTextField.text ?? ""
         let password = passwordTextField.text ?? ""
-        if password.count > 3, login.count > 3 {
+        if password.count > 4, login.count > 4 {
             loginButton.isUserInteractionEnabled = true
-            loginButton.backgroundColor = .raspberryAccent
+            loginButton.backgroundColor = .raspberryAccent.withAlphaComponent(1)
+            faceIDLabel.isHidden = false
+            faceIDSwitcher.isHidden = false
+        } else {
+            loginButton.isUserInteractionEnabled = false
+            loginButton.backgroundColor = .raspberryAccent.withAlphaComponent(0.4)
+            faceIDLabel.isHidden = true
+            faceIDSwitcher.isHidden = true
         }
         return true
     }
 }
 
 // extension EntryViewController: UITextFieldDelegate {
-//    func textField(
+//    public func textField(
 //        _ textField: UITextField,
 //        shouldChangeCharactersIn range: NSRange,
 //        replacementString string: String
 //    ) -> Bool {
 //        let login = loginTextField.text ?? ""
 //        let password = passwordTextField.text ?? ""
-//        if password.count > 3, login.count > 3 {
+//        if password.count > 4, login.count > 4 {
 //            loginButton.isUserInteractionEnabled = true
-//            UIView.animate(withDuration: 0) {
-//                self.loginButton.alpha = 1
-//            }
+//            loginButton.backgroundColor = .raspberryAccent.withAlphaComponent(1)
+//            faceIDLabel.isHidden = false
+//            faceIDSwitcher.isHidden = false
 //        }
 //        return true
 //    }
