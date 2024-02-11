@@ -104,6 +104,7 @@ class EntryViewController: UIViewController {
     private lazy var faceIDSwitcher: UISwitch = {
         let switcher = UISwitch()
         switcher.frame = CGRect(x: 270, y: 546, width: 31, height: 31)
+        switcher.isOn = true
         switcher.isHidden = true
         return switcher
     }()
@@ -145,7 +146,7 @@ class EntryViewController: UIViewController {
     private func setBorderLineView(_ xFrame: Int, _ yFrame: Int) -> UIView {
         let view = UIView()
         view.frame = CGRect(x: xFrame, y: yFrame, width: 335, height: 1)
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .lightGrayBorder
         return view
     }
 
@@ -172,8 +173,8 @@ extension EntryViewController: UITextFieldDelegate {
         replacementString string: String
     ) -> Bool {
         let login = loginTextField.text ?? ""
-        let password = passwordTextField.text ?? ""
-        if password.count > 4, login.count > 4 {
+//        let password = passwordTextField.text ?? ""
+        if login.count > 0 {
             loginButton.isUserInteractionEnabled = true
             loginButton.backgroundColor = .raspberryAccent.withAlphaComponent(1)
             faceIDLabel.isHidden = false
@@ -188,20 +189,10 @@ extension EntryViewController: UITextFieldDelegate {
     }
 }
 
-// extension EntryViewController: UITextFieldDelegate {
-//    public func textField(
-//        _ textField: UITextField,
-//        shouldChangeCharactersIn range: NSRange,
-//        replacementString string: String
-//    ) -> Bool {
-//        let login = loginTextField.text ?? ""
-//        let password = passwordTextField.text ?? ""
-//        if password.count > 4, login.count > 4 {
-//            loginButton.isUserInteractionEnabled = true
-//            loginButton.backgroundColor = .raspberryAccent.withAlphaComponent(1)
-//            faceIDLabel.isHidden = false
-//            faceIDSwitcher.isHidden = false
-//        }
-//        return true
-//    }
-// }
+extension UIView {
+    convenience init(frame: CGRect, backgroundColor: UIColor) {
+        self.init()
+        self.frame = frame
+        self.backgroundColor = backgroundColor
+    }
+}
