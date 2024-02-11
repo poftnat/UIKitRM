@@ -7,6 +7,7 @@ import UIKit
 final class WordTurningView: UIView {
     // MARK: - Public Properties
 
+    /// Кнопка Начать игру
     lazy var startButton: UIButton = {
         let button = UIButton()
         button.frame = CGRect(x: 20, y: 406, width: 335, height: 44)
@@ -18,6 +19,7 @@ final class WordTurningView: UIView {
         return button
     }()
 
+    /// Лейбл заголовка для введенного текста
     lazy var inputTextHeaderLabel: UILabel = {
         let label = UILabel()
         label.frame = CGRect(x: 50, y: 106, width: 275, height: 57)
@@ -28,6 +30,7 @@ final class WordTurningView: UIView {
         return label
     }()
 
+    /// Лейбл  для введенного текста
     lazy var inputTextLabel: UILabel = {
         let label = UILabel()
         label.frame = CGRect(x: 50, y: 206, width: 275, height: 57)
@@ -38,6 +41,7 @@ final class WordTurningView: UIView {
         return label
     }()
 
+    /// Лейбл заголовка для перевернутого текста
     lazy var outputTextHeaderLabel: UILabel = {
         let label = UILabel()
         label.frame = CGRect(x: 50, y: 306, width: 275, height: 57)
@@ -49,6 +53,7 @@ final class WordTurningView: UIView {
         return label
     }()
 
+    /// Лейбл для перевернутого текста
     lazy var outputTextLabel: UILabel = {
         let label = UILabel()
         label.frame = CGRect(x: 50, y: 406, width: 275, height: 57)
@@ -59,6 +64,7 @@ final class WordTurningView: UIView {
         return label
     }()
 
+    /// Замыкание для связи с контролллером
     var onStartWordTurningActionHandler: (() -> ())?
 
     override init(frame: CGRect) {
@@ -73,6 +79,7 @@ final class WordTurningView: UIView {
 
     // MARK: - Private Methods
 
+    /// Метод установки вью на супервью
     private func setupUI() {
         backgroundColor = .white
         addSubview(startButton)
@@ -82,6 +89,7 @@ final class WordTurningView: UIView {
         addSubview(outputTextLabel)
     }
 
+    /// Метод для нажатия по кнопке "Начать", внутри выполняется замыкание, которое вызываается в контроллере
     @objc private func startWordTurningAction() {
         onStartWordTurningActionHandler?()
     }

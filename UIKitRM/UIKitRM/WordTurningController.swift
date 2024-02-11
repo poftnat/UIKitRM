@@ -7,6 +7,7 @@ import UIKit
 final class WordTurningViewController: UIViewController {
     // MARK: - Private Properties
 
+    /// Экземпляр View для этого контроллера
     private var wordTurningView = WordTurningView()
 
     // MARK: - Life Cycle
@@ -24,6 +25,7 @@ final class WordTurningViewController: UIViewController {
 
     // MARK: - Private Methods
 
+    /// Метод кнопки "Начать", вызывающий алерт для ввода переворачиваемого слова
     @objc private func startWordTurningAction() {
         let alertController = UIAlertController(title: "Введите ваше слово", message: nil, preferredStyle: .alert)
         let action = UIAlertAction(title: "Oк", style: .default) { _ in
