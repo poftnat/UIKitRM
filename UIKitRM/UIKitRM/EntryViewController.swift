@@ -6,14 +6,14 @@ import UIKit
 /// Стартовый экран приложения
 class EntryViewController: UIViewController {
     // MARK: - Visual Components
-
+    /// Логотип приложения
     private lazy var logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.frame = CGRect(x: 125, y: 70, width: 125, height: 125)
         imageView.image = UIImage(named: "logo_image")
         return imageView
     }()
-
+    /// Заголовок приложения
     private lazy var appTitleLabel: UILabel = {
         let label = UILabel()
         label.frame = CGRect(x: 100, y: 200, width: 175, height: 44)
@@ -24,7 +24,8 @@ class EntryViewController: UIViewController {
         label.textAlignment = .center
         return label
     }()
-
+    
+    /// Заголовок Sign In
     private lazy var signInLabel: UILabel = {
         let label = UILabel()
         label.frame = CGRect(x: 20, y: 266, width: 175, height: 31)
@@ -34,7 +35,7 @@ class EntryViewController: UIViewController {
         return label
     }()
 
-    //
+    /// Заголовок тайтла электронной почты
     private lazy var emailTitleLabel: UILabel = {
         let label = UILabel()
         label.frame = CGRect(x: 20, y: 318, width: 175, height: 19)
@@ -43,7 +44,7 @@ class EntryViewController: UIViewController {
         label.textColor = .raspberryAccent
         return label
     }()
-
+    /// 
     private lazy var loginTextField: UITextField = {
         let textField = UITextField()
         textField.frame = CGRect(x: 20, y: 347, width: 175, height: 17)

@@ -7,9 +7,9 @@ import UIKit
 class AddBirthdayViewController: UIViewController {
     // MARK: - Private Properties
 
-    private var birthdayNote: BirthdayNoteModel?
     private let maxAge = 130
     private let genders = ["Male", "Female"]
+    weak var delegate: TransferDataDelegate?
 
     // MARK: - Visual Components
 
@@ -283,8 +283,8 @@ class AddBirthdayViewController: UIViewController {
             image: "photo_1",
             daysLeft: 144
         )
-        BirthdayNoteModel.birthdayNotes.append(birthdayNote)
-        print(BirthdayNoteModel.birthdayNotes.count)
+        delegate?.transfer(note: birthdayNote)
+
         print("added")
         dismiss(animated: true)
     }
