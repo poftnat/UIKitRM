@@ -7,6 +7,7 @@ import UIKit
 final class AlertTaskViewController: UIViewController {
     // MARK: - Private Properties
 
+    /// Фон экрана
     private lazy var backgroundImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
@@ -15,6 +16,7 @@ final class AlertTaskViewController: UIViewController {
         return imageView
     }()
 
+    /// Лейбл приветствия пользователя
     private lazy var greetingLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Verdana-Bold", size: 24)
@@ -30,6 +32,7 @@ final class AlertTaskViewController: UIViewController {
         return label
     }()
 
+    /// Кнопка начала игры "Угадай число"
     private lazy var guessNumberButton: UIButton = {
         let button = UIButton()
         button.frame = CGRect(x: 82, y: 301, width: 150, height: 150)
@@ -46,6 +49,7 @@ final class AlertTaskViewController: UIViewController {
         return button
     }()
 
+    /// Кнопка запуска калькулятора
     private lazy var calculatorButton: UIButton = {
         let button = UIButton()
         button.frame = CGRect(x: 132, y: 507, width: 200, height: 200)
@@ -74,6 +78,7 @@ final class AlertTaskViewController: UIViewController {
 
     // MARK: - Private Methods
 
+    /// Метод установки вью на супервью
     private func setupUI() {
         view.addSubview(backgroundImageView)
         view.addSubview(guessNumberButton)
@@ -81,6 +86,7 @@ final class AlertTaskViewController: UIViewController {
         view.addSubview(greetingLabel)
     }
 
+    /// Метод вызова алерта для ввода имени пользователя
     private func setupGreetingAlert() {
         let alertController = UIAlertController(
             title: "Пожалуйста, представьтесь",
@@ -100,6 +106,7 @@ final class AlertTaskViewController: UIViewController {
         present(alertController, animated: true)
     }
 
+    /// Метод начала игры "Угадай число"
     @objc private func startGuessNumberGame() {
         let alertController = UIAlertController(
             title: "Угадай число от 1 до 10",
@@ -124,6 +131,7 @@ final class AlertTaskViewController: UIViewController {
         present(alertController, animated: true)
     }
 
+    /// Метод вызова результата для игры "Угадай число"
     private func showGameResultAlert(_ number: Int) {
         let randomNumber = Int.random(in: 1 ... 10)
         if Int(number) == randomNumber {
@@ -143,6 +151,7 @@ final class AlertTaskViewController: UIViewController {
         }
     }
 
+    /// Метод запуска калькулятора
     @objc private func startCalculator() {
         let alertController = UIAlertController(
             title: "Введите ваши числа",
@@ -169,6 +178,7 @@ final class AlertTaskViewController: UIViewController {
         present(alertController, animated: true)
     }
 
+    /// Метод вызова результата вычисления из Калькулятора
     private func showResultAlert(_ firstNumber: String, _ secondNumber: String) {
         guard let firstNumber = Int(firstNumber), let secondNumber = Int(secondNumber) else { return }
         let result = firstNumber + secondNumber
