@@ -31,13 +31,8 @@ class BirthdayListViewController: UIViewController {
         setupUI()
     }
 
-    // MARK: - Private Methods
-
-    private func setupUI() {
-        view.backgroundColor = .white
-        navigationItem.rightBarButtonItem = addBirthdayButton
-        [pageTitleLabel].forEach { view.addSubview($0) }
-
+    override func viewWillAppear(_ animated: Bool) {
+        print("\(BirthdayNoteModel.birthdayNotes.count) willappear")
         var yPoint = 105
 
         for element in BirthdayNoteModel.birthdayNotes.sorted(by: { $0.daysLeft < $1.daysLeft }) {
@@ -77,6 +72,14 @@ class BirthdayListViewController: UIViewController {
             }
             yPoint += 95
         }
+    }
+
+    // MARK: - Private Methods
+
+    private func setupUI() {
+        view.backgroundColor = .white
+        navigationItem.rightBarButtonItem = addBirthdayButton
+        [pageTitleLabel].forEach { view.addSubview($0) }
     }
 
     @objc private func openAddScreen() {
