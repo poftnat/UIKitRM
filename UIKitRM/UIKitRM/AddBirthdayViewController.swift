@@ -110,7 +110,7 @@ class AddBirthdayViewController: UIViewController {
             action: #selector(chooseBirthdayDate)
         )
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        toolbar.setItems([doneButton, flexSpace], animated: true)
+        toolbar.setItems([flexSpace, doneButton], animated: true)
         return toolbar
     }()
 
@@ -145,14 +145,14 @@ class AddBirthdayViewController: UIViewController {
     private lazy var valuePickerToolbar: UIToolbar = {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
-        let doneButton = UIBarButtonItem(
+        let okButton = UIBarButtonItem(
             title: "Ок",
             style: .plain,
             target: self,
             action: #selector(closePicker)
         )
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        toolbar.setItems([doneButton, flexSpace], animated: true)
+        toolbar.setItems([flexSpace, okButton], animated: true)
         return toolbar
     }()
 
@@ -179,7 +179,7 @@ class AddBirthdayViewController: UIViewController {
     private lazy var genderPicker: UIPickerView = {
         let picker = UIPickerView()
         picker.tag = 1
-
+        picker.backgroundColor = .white
         return picker
     }()
 
@@ -245,7 +245,7 @@ class AddBirthdayViewController: UIViewController {
             telegramTextField
         ]
         .forEach { view.addSubview($0) }
-        
+
         birthdayTextField.inputAccessoryView = datePickerToolbar
 
         ageTextField.inputAccessoryView = valuePickerToolbar
