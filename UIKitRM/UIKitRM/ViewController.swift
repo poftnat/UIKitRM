@@ -7,12 +7,13 @@ import UIKit
 final class ViewController: UIViewController {
     // MARK: - IBOutlets
 
+    /// Текствове поле логина
     @IBOutlet private var loginTextField: UITextField!
-
+    /// Текстовое поле пароля
     @IBOutlet private var passwordTextField: UITextField!
-
+    /// Кнопка скрыть/показать пароль
     @IBOutlet private var hidePasswordButton: UIButton!
-
+    /// Кнопка авторизации
     @IBOutlet private var loginButton: UIButton!
 
     // MARK: - Life Cycle
@@ -25,8 +26,9 @@ final class ViewController: UIViewController {
 
     // MARK: - IBAction
 
+    /// Метод перехода на следуюший экран
     @IBAction private func enterAction(_ sender: UIButton) {}
-
+    /// Метод скрыть/показать пароль
     @IBAction private func hidePassword(_ sender: Any) {
         if passwordTextField.isSecureTextEntry {
             hidePasswordButton.setImage(UIImage(systemName: "eye.fill"), for: .normal)
@@ -40,6 +42,7 @@ final class ViewController: UIViewController {
 
 // MARK: Extension - UITextFieldDelegate
 
+/// Расширение контроллера с делегатом
 extension ViewController: UITextFieldDelegate {
     public func textField(
         _ textField: UITextField,
