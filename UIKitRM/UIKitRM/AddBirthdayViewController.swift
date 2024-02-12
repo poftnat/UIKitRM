@@ -129,12 +129,12 @@ class AddBirthdayViewController: UIViewController {
         let textField = UITextField()
         textField.frame = CGRect(x: 20, y: 418, width: 250, height: 17)
         textField.placeholder = "Typing age"
-        textField.inputView = valuePicker
+        textField.inputView = agePicker
         return textField
     }()
 
-    /// Пикер возраста и пола
-    private lazy var valuePicker: UIPickerView = {
+    /// Пикер возраста
+    private lazy var agePicker: UIPickerView = {
         let picker = UIPickerView()
         picker.tag = 0
         picker.backgroundColor = .white
@@ -217,11 +217,13 @@ class AddBirthdayViewController: UIViewController {
         return alertController
     }()
 
+    // MARK: - Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        valuePicker.dataSource = self
-        valuePicker.delegate = self
+        agePicker.dataSource = self
+        agePicker.delegate = self
         genderPicker.dataSource = self
         genderPicker.delegate = self
     }

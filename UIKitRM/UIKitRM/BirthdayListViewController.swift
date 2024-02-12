@@ -8,10 +8,12 @@ protocol TransferDataDelegate: AnyObject {
     func transfer(note: BirthdayNoteModel)
 }
 
-/// Основной экран приложения
+/// Основной экран приложения, отображает ячейки с данными о сохраненных пользователях и днях рождения
 class BirthdayListViewController: UIViewController {
+    // MARK: - Private Properties
+
     /// Массив записей о днях рождения
-    var birthdayNotes: [BirthdayNoteModel] = [
+    private var birthdayNotes: [BirthdayNoteModel] = [
         BirthdayNoteModel(
             name: "Helena Link",
             dateOfBirth: "10.03",
