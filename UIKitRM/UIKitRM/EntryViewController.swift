@@ -6,6 +6,7 @@ import UIKit
 /// Стартовый экран приложения
 class EntryViewController: UIViewController {
     // MARK: - Visual Components
+
     /// Логотип приложения
     private lazy var logoImageView: UIImageView = {
         let imageView = UIImageView()
@@ -13,6 +14,7 @@ class EntryViewController: UIViewController {
         imageView.image = UIImage(named: "logo_image")
         return imageView
     }()
+
     /// Заголовок приложения
     private lazy var appTitleLabel: UILabel = {
         let label = UILabel()
@@ -24,7 +26,7 @@ class EntryViewController: UIViewController {
         label.textAlignment = .center
         return label
     }()
-    
+
     /// Заголовок Sign In
     private lazy var signInLabel: UILabel = {
         let label = UILabel()
@@ -44,7 +46,8 @@ class EntryViewController: UIViewController {
         label.textColor = .raspberryAccent
         return label
     }()
-    /// 
+
+    /// Текстфилд электронной почты
     private lazy var loginTextField: UITextField = {
         let textField = UITextField()
         textField.frame = CGRect(x: 20, y: 347, width: 175, height: 17)
@@ -53,6 +56,7 @@ class EntryViewController: UIViewController {
         return textField
     }()
 
+    /// Заголовок поля пароля
     private lazy var passwordTitleLabel: UILabel = {
         let label = UILabel()
         label.frame = CGRect(x: 20, y: 393, width: 175, height: 19)
@@ -62,6 +66,7 @@ class EntryViewController: UIViewController {
         return label
     }()
 
+    /// Текстфилд пароля
     private lazy var passwordTextField: UITextField = {
         let textField = UITextField()
         textField.frame = CGRect(x: 20, y: 422, width: 129, height: 17)
@@ -71,6 +76,7 @@ class EntryViewController: UIViewController {
         return textField
     }()
 
+    /// Кнопка скрытия пароля
     private lazy var hidePasswordButton: UIButton = {
         let button = UIButton()
         button.frame = CGRect(x: 332, y: 419, width: 30, height: 20)
@@ -81,6 +87,7 @@ class EntryViewController: UIViewController {
         return button
     }()
 
+    /// Кнопка "Login"
     private lazy var loginButton: UIButton = {
         let button = UIButton()
         button.frame = CGRect(x: 20, y: 671, width: 335, height: 44)
@@ -93,6 +100,7 @@ class EntryViewController: UIViewController {
         return button
     }()
 
+    /// Лейбл свитчера для входа по фейс ид
     private lazy var faceIDLabel: UILabel = {
         let label = UILabel()
         label.frame = CGRect(x: 86, y: 544, width: 150, height: 35)
@@ -102,6 +110,7 @@ class EntryViewController: UIViewController {
         return label
     }()
 
+    /// Свитчер входа по фейс ид
     private lazy var faceIDSwitcher: UISwitch = {
         let switcher = UISwitch()
         switcher.frame = CGRect(x: 270, y: 546, width: 31, height: 31)
@@ -110,6 +119,7 @@ class EntryViewController: UIViewController {
         return switcher
     }()
 
+    /// Границы между полями
     private lazy var loginBorderView = setBorderLineView(20, 372)
     private lazy var passwordBorderView = setBorderLineView(20, 448)
 
@@ -124,6 +134,7 @@ class EntryViewController: UIViewController {
 
     // MARK: - Private Methods
 
+    /// Метод конфигурации вью
     private func setupUI() {
         view.backgroundColor = .white
 
@@ -144,6 +155,7 @@ class EntryViewController: UIViewController {
         ].forEach { view.addSubview($0) }
     }
 
+    /// Метод создания маленьких вьюшек - границ
     private func setBorderLineView(_ xFrame: Int, _ yFrame: Int) -> UIView {
         let view = UIView()
         view.frame = CGRect(x: xFrame, y: yFrame, width: 335, height: 1)
@@ -151,6 +163,7 @@ class EntryViewController: UIViewController {
         return view
     }
 
+    /// Функция скрытия пароля
     @objc private func hidePassword() {
         if passwordTextField.isSecureTextEntry {
             hidePasswordButton.setBackgroundImage(UIImage(systemName: "eye.fill"), for: .normal)
@@ -161,12 +174,14 @@ class EntryViewController: UIViewController {
         }
     }
 
+    /// Функция перехода на другой экран
     @objc private func moveForward() {
         let controllerToMove = BirthdayListViewController()
         navigationController?.pushViewController(controllerToMove, animated: true)
     }
 }
 
+/// Реализация протоколов UITextField на текущем контроллере
 extension EntryViewController: UITextFieldDelegate {
     public func textField(
         _ textField: UITextField,
@@ -174,8 +189,8 @@ extension EntryViewController: UITextFieldDelegate {
         replacementString string: String
     ) -> Bool {
         let login = loginTextField.text ?? ""
-//        let password = passwordTextField.text ?? ""
-        if login.count > 0 {
+        let password = passwordTextField.text ?? ""
+        if login.count > 0, password.count > 0 {
             loginButton.isUserInteractionEnabled = true
             loginButton.backgroundColor = .raspberryAccent.withAlphaComponent(1)
             faceIDLabel.isHidden = false
@@ -187,13 +202,5 @@ extension EntryViewController: UITextFieldDelegate {
             faceIDSwitcher.isHidden = true
         }
         return true
-    }
-}
-
-extension UIView {
-    convenience init(frame: CGRect, backgroundColor: UIColor) {
-        self.init()
-        self.frame = frame
-        self.backgroundColor = backgroundColor
     }
 }

@@ -283,9 +283,8 @@ class AddBirthdayViewController: UIViewController {
             image: "photo_1",
             daysLeft: 144
         )
-        delegate?.transfer(note: birthdayNote)
 
-        print("added")
+        delegate?.transfer(note: birthdayNote)
         dismiss(animated: true)
     }
 
@@ -303,25 +302,7 @@ class AddBirthdayViewController: UIViewController {
     }
 }
 
-/// Расширение для UILabel с нужным инициализатором
-extension UILabel {
-    convenience init(
-        frame: CGRect,
-        text: String,
-        font: String?,
-        fontSize: CGFloat,
-        textColor: UIColor?,
-        alignment: NSTextAlignment?
-    ) {
-        self.init()
-        self.text = text
-        self.font = UIFont(name: font ?? "Verdana-Bold", size: fontSize)
-        self.frame = frame
-        self.textColor = textColor ?? .black
-        textAlignment = alignment ?? .left
-    }
-}
-
+/// Расширения UIPickerView
 extension AddBirthdayViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         var result = ""

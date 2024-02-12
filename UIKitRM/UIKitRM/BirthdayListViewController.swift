@@ -3,12 +3,14 @@
 
 import UIKit
 
+/// Протокол для передачи информации между контроллерами
 protocol TransferDataDelegate: AnyObject {
     func transfer(note: BirthdayNoteModel)
 }
 
 /// Основной экран приложения
 class BirthdayListViewController: UIViewController {
+    /// Массив записей о днях рождения
     var birthdayNotes: [BirthdayNoteModel] = [
         BirthdayNoteModel(
             name: "Helena Link",
@@ -46,6 +48,7 @@ class BirthdayListViewController: UIViewController {
 
     // MARK: - Visual Components
 
+    /// Заголовок экрана
     private lazy var pageTitleLabel: UILabel = {
         let label = UILabel()
         label.frame = CGRect(x: 108, y: 59, width: 209, height: 20)
@@ -54,6 +57,7 @@ class BirthdayListViewController: UIViewController {
         return label
     }()
 
+    /// Кнопка "добавить запись о дне рождения"
     private lazy var addBirthdayButton: UIBarButtonItem = {
         let button = UIButton(type: .system)
         button.setImage(UIImage(systemName: "plus"), for: .normal)
@@ -73,12 +77,14 @@ class BirthdayListViewController: UIViewController {
 
     // MARK: - Private Methods
 
+    /// Конфигурация UI
     private func setupUI() {
         view.backgroundColor = .white
         navigationItem.rightBarButtonItem = addBirthdayButton
         [pageTitleLabel].forEach { view.addSubview($0) }
     }
 
+    /// Конфигурация представления ячеек
     private func setupLabels() {
         var yPoint = 105
 
@@ -121,6 +127,7 @@ class BirthdayListViewController: UIViewController {
         }
     }
 
+    /// Открытие экрана для добавления записи в массив
     @objc private func openAddScreen() {
         let controllerToMove = AddBirthdayViewController()
         controllerToMove.delegate = self
@@ -128,6 +135,7 @@ class BirthdayListViewController: UIViewController {
     }
 }
 
+/// Подписание класса на протокол
 extension BirthdayListViewController: TransferDataDelegate {
     func transfer(note: BirthdayNoteModel) {
         birthdayNotes.append(note)

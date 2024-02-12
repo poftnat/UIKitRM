@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F32350E2B79EAA8004BD9FF /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F32350D2B79EAA8004BD9FF /* Extension+UIView.swift */; };
+		4F3235102B79F024004BD9FF /* Extension+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F32350F2B79F024004BD9FF /* Extension+UILabel.swift */; };
 		4F892A0E2B74058F000C0783 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F892A0D2B74058F000C0783 /* AppDelegate.swift */; };
 		4F892A102B74058F000C0783 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F892A0F2B74058F000C0783 /* SceneDelegate.swift */; };
 		4F892A122B74058F000C0783 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F892A112B74058F000C0783 /* EntryViewController.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F32350D2B79EAA8004BD9FF /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
+		4F32350F2B79F024004BD9FF /* Extension+UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UILabel.swift"; sourceTree = "<group>"; };
 		4F892A0A2B74058F000C0783 /* UIKitRM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitRM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F892A0D2B74058F000C0783 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F892A0F2B74058F000C0783 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +72,8 @@
 				4F892A112B74058F000C0783 /* EntryViewController.swift */,
 				4FA8FDC02B76CF99000CD802 /* BirthdayListViewController.swift */,
 				4FA8FDC22B76F635000CD802 /* AddBirthdayViewController.swift */,
+				4F32350D2B79EAA8004BD9FF /* Extension+UIView.swift */,
+				4F32350F2B79F024004BD9FF /* Extension+UILabel.swift */,
 				4F892A162B740591000C0783 /* Assets.xcassets */,
 				4FA8FDBD2B76AD0B000CD802 /* Fonts */,
 				4F892A1B2B740591000C0783 /* Info.plist */,
@@ -208,6 +214,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F3235102B79F024004BD9FF /* Extension+UILabel.swift in Sources */,
+				4F32350E2B79EAA8004BD9FF /* Extension+UIView.swift in Sources */,
 				4FA8FDC62B781961000CD802 /* BirthdayModel.swift in Sources */,
 				4F892A122B74058F000C0783 /* EntryViewController.swift in Sources */,
 				4FA8FDC32B76F635000CD802 /* AddBirthdayViewController.swift in Sources */,
