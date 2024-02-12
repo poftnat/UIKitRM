@@ -4,7 +4,9 @@
 import UIKit
 
 /// Стартовый экран приложения. Контроллер плейлиста.
-class PlaylistViewController: UIViewController {
+final class PlaylistViewController: UIViewController {
+    // MARK: - IBOutlets
+
     /// Группа лейблов, отрисовывающих первую ячейку
     /// картинка с обложкой альбома
     @IBOutlet var firstSoundImage: UIImageView!

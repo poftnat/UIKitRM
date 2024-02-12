@@ -4,16 +4,23 @@
 import AVFoundation
 import UIKit
 
-/// Контроллер плеера
-class PlayerViewController: UIViewController {
-    /// Свойство-плеер
-    private lazy var player = AVAudioPlayer()
+/// Контроллер аудиоплеера.
+final class PlayerViewController: UIViewController {
+    // MARK: - Public Properties
+
     /// Свойство-индекс текущей песни
     var songIndex = 0
+
+    // MARK: - Private Properties
+
+    /// Свойство-плеер
+    private lazy var player = AVAudioPlayer()
     /// Экземпляр текущей песни
-    var song: Sound {
+    private var song: Sound {
         Sound.sounds[songIndex]
     }
+
+    // MARK: - IBOutlets
 
     /// Картинка обложки
     @IBOutlet var coverImageView: UIImageView!
@@ -79,7 +86,7 @@ class PlayerViewController: UIViewController {
     }
 
     /// Метод движения по текущему треку слайдером
-    @IBAction func slideTrek(_ sender: UISlider) {
+    @IBAction private func slideTrek(_ sender: UISlider) {
         if sender == playerSlider {
             player.stop()
             playButton.setImage(UIImage(named: "play"), for: .normal)
@@ -91,7 +98,7 @@ class PlayerViewController: UIViewController {
     }
 
     /// Метод изменения громкости
-    @IBAction func slideVolume(_ sender: UISlider) {
+    @IBAction private func slideVolume(_ sender: UISlider) {
         if sender == volumeSlider {
             player.volume = volumeSlider.value
             if volumeSlider.value == volumeSlider.minimumValue {
@@ -103,7 +110,7 @@ class PlayerViewController: UIViewController {
     }
 
     /// Метод кнопки play
-    @IBAction func startPlay(_ sender: UIButton) {
+    @IBAction private func startPlay(_ sender: UIButton) {
         if playButton.currentImage == UIImage(named: "pause") {
             playButton.setImage(UIImage(named: "play"), for: .normal)
             player.pause()
@@ -114,7 +121,7 @@ class PlayerViewController: UIViewController {
     }
 
     /// Метод кнопки "следующий трек"
-    @IBAction func playNext(_ sender: UIButton) {
+    @IBAction private func playNext(_ sender: UIButton) {
         player.stop()
         playButton.setImage(UIImage(named: "play"), for: .normal)
         if songIndex < Sound.sounds.count - 1 {
@@ -129,7 +136,7 @@ class PlayerViewController: UIViewController {
     }
 
     /// Метод кнопки "предыдущий трек"
-    @IBAction func playPrevious(_ sender: UIButton) {
+    @IBAction private func playPrevious(_ sender: UIButton) {
         player.stop()
         playButton.setImage(UIImage(named: "play"), for: .normal)
         if songIndex > 1 {
@@ -144,7 +151,7 @@ class PlayerViewController: UIViewController {
     }
 
     /// Метод кнопки "закрыть окно"
-    @IBAction func dismissAction(_ sender: UIButton) {
+    @IBAction private func dismissAction(_ sender: UIButton) {
         player.stop()
         dismiss(animated: true)
     }
