@@ -76,6 +76,8 @@
 				4F892A132B74058F000C0783 /* Main.storyboard */,
 				4F892A162B740591000C0783 /* Assets.xcassets */,
 				4F892A182B740591000C0783 /* LaunchScreen.storyboard */,
+				4FA8FDD32B796131000CD802 /* pie.mp3 */,
+				4FA8FDD42B796131000CD802 /* mars.mp3 */,
 				4F892A1B2B740591000C0783 /* Info.plist */,
 				4FA8FDD02B7960CA000CD802 /* Sounds */,
 				4FA8FDC92B794FC1000CD802 /* Fonts */,
@@ -95,8 +97,6 @@
 		4FA8FDD02B7960CA000CD802 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				4FA8FDD32B796131000CD802 /* pie.mp3 */,
-				4FA8FDD42B796131000CD802 /* mars.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";

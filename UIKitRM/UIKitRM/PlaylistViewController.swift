@@ -52,9 +52,8 @@ class PlaylistViewController: UIViewController {
         secondSoundAuthorLabel.text = sounds[1].author
         secondSoundDurationLabel.text = "03:35"
     }
-
-    @objc func moveToPlayer(sound: Int) {
-        let newVC = PlayerViewController()
-        present(newVC, animated: true)
-    }
+//
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        <#code#>
+//    }
 }
