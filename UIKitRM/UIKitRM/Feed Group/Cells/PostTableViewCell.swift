@@ -128,7 +128,9 @@ final class PostTableViewCell: UITableViewCell {
 
     override func prepareForReuse() {
         super.prepareForReuse()
-        contentView.willRemoveSubview(scrollView)
+        for subview in scrollView.subviews {
+            subview.removeFromSuperview()
+        }
     }
 
     func configure(data: UserPostsData) {
@@ -273,7 +275,7 @@ final class PostTableViewCell: UITableViewCell {
     }
 }
 
-/// Реализация методов СкроллВью в ячейке
+/// Реализация методов делегата скролл вью в ячейке
 extension PostTableViewCell: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         pageControl.currentPage = Int(scrollView.contentOffset.x - 50 / UIScreen.main.bounds.width)

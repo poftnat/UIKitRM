@@ -107,8 +107,6 @@ final class FeedViewController: UIViewController {
         setupUI()
     }
 
-    // MARK: - Public Methods
-
     // MARK: - Private Methods
 
     private func setupUI() {
