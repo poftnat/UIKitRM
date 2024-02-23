@@ -55,7 +55,6 @@ final class UserProfileViewController: UIViewController {
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.isScrollEnabled = false
         tableView.separatorStyle = .none
         return tableView
     }()

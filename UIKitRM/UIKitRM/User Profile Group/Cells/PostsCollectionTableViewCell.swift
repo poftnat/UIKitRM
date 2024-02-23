@@ -41,14 +41,15 @@ class PostsCollectionTableViewCell: UITableViewCell {
 
     private func setupCell() {
         contentView.addSubview(collectionView)
-        contentView.heightAnchor.constraint(equalToConstant: 370).isActive = true
         setupCollection()
+
+        contentView.heightAnchor.constraint(equalToConstant: 650).isActive = true
     }
 
     private func setupCollection() {
         let layout = setupCollectionFlowLayout()
         collectionView.setCollectionViewLayout(layout, animated: false)
-        collectionView.isScrollEnabled = true
+        collectionView.isScrollEnabled = false
 
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -102,10 +103,6 @@ extension PostsCollectionTableViewCell: UICollectionViewDelegate {}
 
 /// Подписание PostsCollectionTableViewCell на UICollectionViewFlowLayoutDelegate.
 extension PostsCollectionTableViewCell: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(images[indexPath.item])
-    }
-
     func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
