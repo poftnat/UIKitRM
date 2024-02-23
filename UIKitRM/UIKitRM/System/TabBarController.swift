@@ -34,6 +34,8 @@ final class TabBarController: UITabBarController {
 
         let notificationsNavController = UINavigationController(rootViewController: notificationsController)
 
+        let userNavigationController = UINavigationController(rootViewController: userProfileController)
+
         feedNavigationController.tabBarItem = UITabBarItem(
             title: Constants.feedTabBarTitle,
             image: Constants.feedTabBarImage,
@@ -45,13 +47,13 @@ final class TabBarController: UITabBarController {
             selectedImage: Constants.notificationsTabBarImage.withTintColor(.black, renderingMode: .alwaysTemplate)
         )
 
-        userProfileController.tabBarItem = UITabBarItem(
+        userNavigationController.tabBarItem = UITabBarItem(
             title: Constants.userProfileTabBarTitle,
             image: Constants.userProfileTabBarImage,
             selectedImage: Constants.userProfileTabBarImage.withTintColor(.black, renderingMode: .alwaysTemplate)
         )
         setViewControllers(
-            [feedNavigationController, notificationsNavController, userProfileController],
+            [feedNavigationController, notificationsNavController, userNavigationController],
             animated: true
         )
     }

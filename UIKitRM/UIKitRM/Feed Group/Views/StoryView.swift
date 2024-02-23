@@ -18,6 +18,7 @@ final class StoryView: UIView {
         imageView.image = UIImage.profile
         imageView.layer.cornerRadius = 30
         imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFill
         // TODO: разобраться с тем, что это такое
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false

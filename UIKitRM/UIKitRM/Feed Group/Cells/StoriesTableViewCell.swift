@@ -40,7 +40,6 @@ final class StoriesTableViewCell: UITableViewCell {
 
     private func setupCell() {
         storiesScrollView.contentSize = CGSize(width: 1000, height: 85)
-        storiesScrollView.backgroundColor = .lightGray.withAlphaComponent(0.1)
         contentView.addSubview(storiesScrollView)
         storiesScrollView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         storiesScrollView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
