@@ -7,17 +7,14 @@ import UIKit
 class PostsCollectionTableViewCell: UITableViewCell {
     // MARK: - Constants
 
-    enum Constants {
+    private enum Constants {
         static let collectionCellIdentifier = "SinglePostCollectionViewCell"
-        //    static let
-        //    static let
-        //    static let
     }
 
     // MARK: - Visual Components
 
     private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-    
+
     // MARK: - Private Properties
 
     private var images: [String] = []
@@ -43,6 +40,8 @@ class PostsCollectionTableViewCell: UITableViewCell {
     // MARK: - Private Methods
 
     private func setupCell() {
+        contentView.addSubview(collectionView)
+        contentView.heightAnchor.constraint(equalToConstant: 370).isActive = true
         setupCollection()
     }
 
@@ -53,19 +52,21 @@ class PostsCollectionTableViewCell: UITableViewCell {
 
         collectionView.dataSource = self
         collectionView.delegate = self
-        contentView.addSubview(collectionView)
 
-        contentView.heightAnchor.constraint(equalToConstant: 370).isActive = true
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-        collectionView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-        collectionView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-        collectionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor).isActive = true
+        setCollectionViewConstraints()
 
         collectionView.register(
             SinglePostCollectionViewCell.self,
             forCellWithReuseIdentifier: Constants.collectionCellIdentifier
         )
+    }
+
+    private func setCollectionViewConstraints() {
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        collectionView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor).isActive = true
     }
 
     private func setupCollectionFlowLayout() -> UICollectionViewFlowLayout {
@@ -96,7 +97,7 @@ extension PostsCollectionTableViewCell: UICollectionViewDataSource {
     }
 }
 
-/// Подписание PostsCollectionTableViewCell на UICollectionViewDelegate (без него не работает .didSelectItemAt ())
+/// Подписание PostsCollectionTableViewCell на UICollectionViewDelegate (без него не работает .sizeForItemAt())
 extension PostsCollectionTableViewCell: UICollectionViewDelegate {}
 
 /// Подписание PostsCollectionTableViewCell на UICollectionViewFlowLayoutDelegate.

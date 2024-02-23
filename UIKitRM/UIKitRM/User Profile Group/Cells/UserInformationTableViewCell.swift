@@ -5,18 +5,14 @@ import UIKit
 
 /// Вторая ячейка профиля пользователя. Содержит: полное имя пользователя, описание, ссылка???.
 final class UserInformationTableViewCell: UITableViewCell {
-    // MARK: - Types
-
     // MARK: - Constants
 
-    enum Constants {
+    private enum Constants {
         static let verdanaBoldFontName = "Verdana-Bold"
         static let verdanaFontName = "Verdana"
         static let gap: CGFloat = 80
         static let linkText = "🔗 www.spacex.com"
     }
-
-    // MARK: - IBOutlets
 
     // MARK: - Visual Components
 
@@ -54,8 +50,6 @@ final class UserInformationTableViewCell: UITableViewCell {
 
     var linkButtonHandler: (() -> ())?
 
-    // MARK: - Private Properties
-
     // MARK: - Initializers
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -68,31 +62,36 @@ final class UserInformationTableViewCell: UITableViewCell {
         setupCell()
     }
 
-    // MARK: - Life Cycle
-
-    // MARK: - Public Methods
-
-    // MARK: - IBAction
-
     // MARK: - Private Methods
 
     private func setupCell() {
+        selectionStyle = .none
+        contentView.heightAnchor.constraint(equalToConstant: 74).isActive = true
+
         addSubview(nameLabel)
         addSubview(descriptionLabel)
         contentView.addSubview(linkButton)
-        selectionStyle = .none
 
-        contentView.heightAnchor.constraint(equalToConstant: 74).isActive = true
+        setNameLabelConstraints()
+        setDescriptionLabelConstraints()
+        setLinkButtonConstraints()
+    }
+
+    private func setNameLabelConstraints() {
         nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 4).isActive = true
         nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15).isActive = true
         nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15).isActive = true
         nameLabel.heightAnchor.constraint(equalToConstant: 17).isActive = true
+    }
 
+    private func setDescriptionLabelConstraints() {
         descriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8).isActive = true
         descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15).isActive = true
         descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15).isActive = true
         descriptionLabel.heightAnchor.constraint(equalToConstant: 17).isActive = true
+    }
 
+    private func setLinkButtonConstraints() {
         linkButton.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 2).isActive = true
         linkButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15).isActive = true
         linkButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15).isActive = true

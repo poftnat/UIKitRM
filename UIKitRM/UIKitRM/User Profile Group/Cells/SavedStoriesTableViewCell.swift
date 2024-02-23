@@ -7,11 +7,8 @@ import UIKit
 final class SavedStoriesTableViewCell: UITableViewCell {
     // MARK: - Constants
 
-    enum Constants {
+    private enum Constants {
         static let storyViewsGap: CGFloat = 70
-        //    static let
-        //    static let
-        //    static let
     }
 
     // MARK: - Visual Components
@@ -43,6 +40,7 @@ final class SavedStoriesTableViewCell: UITableViewCell {
             view.setCoverImage(imageName: story.coverImageName)
             view.setTitle(story.title)
             storiesScrollView.addSubview(view)
+
             view.centerYAnchor.constraint(equalTo: storiesScrollView.centerYAnchor).isActive = true
             view.widthAnchor.constraint(equalToConstant: 65).isActive = true
             view.heightAnchor.constraint(equalToConstant: 75).isActive = true
@@ -64,6 +62,10 @@ final class SavedStoriesTableViewCell: UITableViewCell {
         storiesScrollView.contentSize = CGSize(width: 1000, height: 71)
         contentView.addSubview(storiesScrollView)
 
+        setStoriesScrollViewConstraints()
+    }
+
+    private func setStoriesScrollViewConstraints() {
         storiesScrollView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         storiesScrollView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         storiesScrollView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true

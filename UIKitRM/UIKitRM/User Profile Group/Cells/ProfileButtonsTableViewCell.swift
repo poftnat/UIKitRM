@@ -8,14 +8,10 @@ import UIKit
 final class ProfileButtonsTableViewCell: UITableViewCell {
     // MARK: - Constants
 
-    enum Constants {
+    private enum Constants {
         static let editProfileButtonText = "Изменить"
         static let shareProfileButtonText = "Поделиться профилем"
         static let verdanaBoldFontName = "Verdana-Bold"
-
-        //    static let
-        //    static let
-        //    static let
     }
 
     // MARK: - Visual Components
@@ -67,25 +63,35 @@ final class ProfileButtonsTableViewCell: UITableViewCell {
     // MARK: - Private Methods
 
     private func setupCell() {
+        selectionStyle = .none
+        contentView.heightAnchor.constraint(equalToConstant: 42).isActive = true
+
         addSubview(editProfileButton)
         addSubview(shareProfileButton)
         addSubview(showRecomendationsButton)
-        selectionStyle = .none
 
-        contentView.heightAnchor.constraint(equalToConstant: 42).isActive = true
+        setEditProfileButtonConstraints()
+        setShareProfileButtonConstraints()
+        setShowRecomendationsButtonConstraints()
+    }
 
+    private func setEditProfileButtonConstraints() {
         editProfileButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         editProfileButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15).isActive = true
         editProfileButton.widthAnchor.constraint(greaterThanOrEqualToConstant: 153).isActive = true
         editProfileButton.heightAnchor.constraint(equalToConstant: 27).isActive = true
+    }
 
+    private func setShareProfileButtonConstraints() {
         shareProfileButton.centerYAnchor.constraint(equalTo: editProfileButton.centerYAnchor).isActive = true
         shareProfileButton.leadingAnchor.constraint(equalTo: editProfileButton.trailingAnchor, constant: 4)
             .isActive = true
         shareProfileButton.widthAnchor.constraint(equalTo: editProfileButton.widthAnchor, multiplier: 1)
             .isActive = true
         shareProfileButton.heightAnchor.constraint(equalTo: editProfileButton.heightAnchor).isActive = true
+    }
 
+    private func setShowRecomendationsButtonConstraints() {
         showRecomendationsButton.centerYAnchor.constraint(equalTo: editProfileButton.centerYAnchor).isActive = true
         showRecomendationsButton.leadingAnchor.constraint(equalTo: shareProfileButton.trailingAnchor, constant: 4)
             .isActive = true

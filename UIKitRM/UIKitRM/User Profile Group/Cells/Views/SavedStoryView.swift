@@ -17,7 +17,6 @@ final class SavedStoryView: UIView {
         imageView.image = UIImage.profile
         imageView.layer.cornerRadius = 25
         imageView.clipsToBounds = true
-        // TODO: разобраться с тем, что это такое
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView

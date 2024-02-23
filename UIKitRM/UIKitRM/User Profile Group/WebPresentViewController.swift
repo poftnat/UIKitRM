@@ -4,12 +4,12 @@
 import UIKit
 import WebKit
 
-/// Экран представления веб браузера
+/// Экран веб представления открытой ссылки
 final class WebPresentViewController: UIViewController {
     // MARK: - Constants
 
-    enum Constants {
-        static let urlString = "https://youtu.be/dQw4w9WgXcQ?si=1h9kaErkM2mfkDkM"
+    private enum Constants {
+        static let urlString = "https://www.spacex.com/vehicles/starship"
     }
 
     // MARK: - Visual Components
@@ -17,6 +17,7 @@ final class WebPresentViewController: UIViewController {
     private lazy var closeButton: UIButton = {
         let button = UIButton(type: .close)
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.tintColor = .red
         button.addTarget(self, action: #selector(closeScreen), for: .touchUpInside)
         return button
     }()
@@ -33,22 +34,15 @@ final class WebPresentViewController: UIViewController {
     // MARK: - Private Methods
 
     private func setupUI() {
-        view.addSubview(closeButton)
         view.backgroundColor = .white
-        closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 20).isActive = true
-        closeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
-        closeButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        closeButton.widthAnchor.constraint(equalToConstant: 20).isActive = true
         setupWebView()
+        webView.addSubview(closeButton)
+        setCloseButtonConstraints()
     }
 
     private func setupWebView() {
         view.addSubview(webView)
-        webView.translatesAutoresizingMaskIntoConstraints = false
-        webView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
-        webView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        webView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        webView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        setWebViewConstraints()
         loadRequest()
     }
 
@@ -56,6 +50,21 @@ final class WebPresentViewController: UIViewController {
         guard let url = URL(string: Constants.urlString) else { return }
         let urlRequest = URLRequest(url: url)
         webView.load(urlRequest)
+    }
+
+    private func setCloseButtonConstraints() {
+        closeButton.topAnchor.constraint(equalTo: webView.topAnchor, constant: 20).isActive = true
+        closeButton.leadingAnchor.constraint(equalTo: webView.leadingAnchor, constant: 20).isActive = true
+        closeButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        closeButton.widthAnchor.constraint(equalToConstant: 20).isActive = true
+    }
+
+    private func setWebViewConstraints() {
+        webView.translatesAutoresizingMaskIntoConstraints = false
+        webView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        webView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        webView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        webView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     }
 
     @objc private func closeScreen() {

@@ -5,11 +5,9 @@ import UIKit
 
 /// Верхняя ячейка профиля пользователя. Содержит: аватар, лейблы количества публикаций, подписчиков, подписок.
 final class HeaderLabelsTableViewCell: UITableViewCell {
-    // MARK: - Types
-
     // MARK: - Constants
 
-    enum Constants {
+    private enum Constants {
         static let labelsText = ["публикации", "подписчики", "подписки"]
         static let verdanaBoldFontName = "Verdana-Bold"
         static let verdanaFontName = "Verdana"
@@ -46,10 +44,6 @@ final class HeaderLabelsTableViewCell: UITableViewCell {
         return view
     }()
 
-    // MARK: - Public Properties
-
-    // MARK: - Private Properties
-
     // MARK: - Initializers
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -64,36 +58,19 @@ final class HeaderLabelsTableViewCell: UITableViewCell {
         configure()
     }
 
-    // MARK: - Life Cycle
-
-    // MARK: - Public Methods
-
-    // MARK: - IBAction
-
     // MARK: - Private Methods
 
     private func setupCell() {
+        selectionStyle = .none
+        contentView.heightAnchor.constraint(equalToConstant: 90).isActive = true
+
         addSubview(avatarImageView)
         addSubview(addStoryButton)
         addSubview(labelsView)
-        selectionStyle = .none
 
-        contentView.heightAnchor.constraint(equalToConstant: 90).isActive = true
-
-        avatarImageView.topAnchor.constraint(equalTo: topAnchor, constant: 5).isActive = true
-        avatarImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
-        avatarImageView.widthAnchor.constraint(equalToConstant: 80).isActive = true
-        avatarImageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
-
-        addStoryButton.centerXAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: -8).isActive = true
-        addStoryButton.centerYAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: -8).isActive = true
-        addStoryButton.widthAnchor.constraint(equalToConstant: 27).isActive = true
-        addStoryButton.heightAnchor.constraint(equalToConstant: 27).isActive = true
-
-        labelsView.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
-        labelsView.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 60).isActive = true
-        labelsView.widthAnchor.constraint(equalToConstant: 220).isActive = true
-        labelsView.heightAnchor.constraint(equalToConstant: 31).isActive = true
+        setAvatarImageViewConstraints()
+        setAddStoryButtonConstraints()
+        setLabelsViewConstraints()
     }
 
     private func configure() {
@@ -137,5 +114,26 @@ final class HeaderLabelsTableViewCell: UITableViewCell {
             titleLabel.widthAnchor.constraint(equalToConstant: 70).isActive = true
             titleLabel.heightAnchor.constraint(equalToConstant: 12).isActive = true
         }
+    }
+
+    private func setAvatarImageViewConstraints() {
+        avatarImageView.topAnchor.constraint(equalTo: topAnchor, constant: 5).isActive = true
+        avatarImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
+        avatarImageView.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        avatarImageView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+    }
+
+    private func setLabelsViewConstraints() {
+        labelsView.topAnchor.constraint(equalTo: topAnchor, constant: 25).isActive = true
+        labelsView.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 45).isActive = true
+        labelsView.widthAnchor.constraint(equalToConstant: 220).isActive = true
+        labelsView.heightAnchor.constraint(equalToConstant: 31).isActive = true
+    }
+
+    private func setAddStoryButtonConstraints() {
+        addStoryButton.centerXAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: -8).isActive = true
+        addStoryButton.centerYAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: -8).isActive = true
+        addStoryButton.widthAnchor.constraint(equalToConstant: 27).isActive = true
+        addStoryButton.heightAnchor.constraint(equalToConstant: 27).isActive = true
     }
 }

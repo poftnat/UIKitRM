@@ -7,7 +7,7 @@ import UIKit
 final class UserProfileViewController: UIViewController {
     // MARK: - Constants
 
-    enum Constants {
+    private enum Constants {
         static let leftBarButtonImage = UIImage.blocked
         static let leftBarButtonTitle = "Account_Name"
         static let verdanaBoldFontName = "Verdana-Bold"
@@ -52,7 +52,13 @@ final class UserProfileViewController: UIViewController {
         return item
     }()
 
-    private let tableView = UITableView()
+    private let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.isScrollEnabled = false
+        tableView.separatorStyle = .none
+        return tableView
+    }()
 
     // MARK: - Private Properties
 
@@ -97,18 +103,18 @@ final class UserProfileViewController: UIViewController {
 
     private func setupUI() {
         view.backgroundColor = .white
-        navigationItem.leftBarButtonItem = leftBarButtonItem
-        navigationController?.navigationBar.tintColor = .black
-        navigationItem.rightBarButtonItems = [menuBarButtonItem, plusBarButtonItem]
-        view.addSubview(tableView)
+        setNavigationBar()
         setupTableView()
     }
 
+    private func setNavigationBar() {
+        navigationItem.leftBarButtonItem = leftBarButtonItem
+        navigationController?.navigationBar.tintColor = .black
+        navigationItem.rightBarButtonItems = [menuBarButtonItem, plusBarButtonItem]
+    }
+
     private func setupTableView() {
-        tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
-        tableView.isScrollEnabled = false
-        tableView.separatorStyle = .none
         tableView.dataSource = self
         tableView.register(HeaderLabelsTableViewCell.self, forCellReuseIdentifier: Constants.headerLabelsCellItentifier)
         tableView.register(
@@ -128,7 +134,10 @@ final class UserProfileViewController: UIViewController {
             PostsCollectionTableViewCell.self,
             forCellReuseIdentifier: Constants.collectionCellIdentifier
         )
+        setTableViewConstraints()
+    }
 
+    private func setTableViewConstraints() {
         tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 4).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0)
             .isActive = true
@@ -186,20 +195,6 @@ extension UserProfileViewController: UITableViewDataSource {
             ) as? PostsCollectionTableViewCell else { return UITableViewCell() }
             cell.transferImagesForCollection(images: images)
             return cell
-        }
-    }
-}
-
-/// Расширение UserProfileViewController методами UITableViewDelegate
-extension UserProfileViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch Constants.sections[indexPath.section] {
-        case .header:
-            return 120
-        case .buttons, .description, .stories:
-            return 100
-        case .postsCollection:
-            return 200
         }
     }
 }
