@@ -13,6 +13,9 @@ final class FeedViewController: UIViewController {
         static let PostTableViewCellIdentifier = "PostTableViewCell"
         static let StoriesTableViewCellIdentifier = "StoriesTableViewCell"
         static let RecommendationsTableViewCellIdentifier = "RecommendationsTableViewCell"
+        static let storyCellHeight: CGFloat = 80
+        static let postCellHeight: CGFloat = 500
+        static let recommendationscellHeight: CGFloat = 300
     }
 
     // MARK: - Visual Components
@@ -205,11 +208,11 @@ extension FeedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch content[indexPath.section] {
         case .story:
-            return 100
+            return Constants.storyCellHeight
         case .firstPost, .otherPosts:
-            return 500
+            return Constants.postCellHeight
         case .recommended:
-            return 300
+            return Constants.recommendationscellHeight
         }
     }
 }

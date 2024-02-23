@@ -5,8 +5,6 @@ import UIKit
 
 /// Экран уведомлений
 final class NotificationsViewController: UIViewController {
-    // MARK: - Types
-
     // MARK: - Constants
 
     private enum Constants {
@@ -16,9 +14,9 @@ final class NotificationsViewController: UIViewController {
         static let navigationItemTitle = "Уведомления"
         static let subscriptionTableViewCellIdentifier = "SubscriptionTableViewCell"
         static let actionsTableViewCellIdentifier = "ActionsTableViewCell"
+        static let todaySectionHeader = "Сегодня"
+        static let lastWeekSectionHeader = "На этой неделе"
     }
-
-    // MARK: - IBOutlets
 
     // MARK: - Visual Components
 
@@ -35,8 +33,6 @@ final class NotificationsViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
-
-    // MARK: - Public Properties
 
     // MARK: - Private Properties
 
@@ -135,9 +131,9 @@ extension NotificationsViewController: UITableViewDataSource, UITableViewDelegat
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch notificationSections[section] {
         case .today:
-            return "Сегодня"
+            return Constants.todaySectionHeader
         case .lastWeek:
-            return "На этой неделе"
+            return Constants.lastWeekSectionHeader
         }
     }
 

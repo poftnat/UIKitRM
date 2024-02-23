@@ -5,17 +5,14 @@ import UIKit
 
 // Вью для рекомендованных аккаунтов
 final class RecommendedAccountView: UIView {
-    // MARK: - Types
-
     // MARK: - Constants
 
     private enum Constants {
         static let subscribeButtonTitle = "Подписаться"
         static let verdanaFontName = "Verdana"
         static let verdanaBoldFontName = "Verdana-Bold"
+        static let xmarkImageName = "xmark"
     }
-
-    // MARK: - IBOutlets
 
     // MARK: - Visual Components
 
@@ -50,7 +47,7 @@ final class RecommendedAccountView: UIView {
 
     private let closeRecommendationButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(systemName: "xmark"), for: .normal)
+        button.setImage(UIImage(systemName: Constants.xmarkImageName), for: .normal)
         button.tintColor = .black
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -68,8 +65,6 @@ final class RecommendedAccountView: UIView {
         setupView()
     }
 
-    // MARK: - Life Cycle
-
     // MARK: - Public Methods
 
     func setUserName(userName: String) {
@@ -79,8 +74,6 @@ final class RecommendedAccountView: UIView {
     func setAvatar(imageName: String) {
         storyImageView.image = UIImage(named: imageName)
     }
-
-    // MARK: - IBAction
 
     // MARK: - Private Methods
 
