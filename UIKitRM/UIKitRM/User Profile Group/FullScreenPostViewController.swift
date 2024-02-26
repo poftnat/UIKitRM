@@ -19,10 +19,6 @@ final class FullScreenPostViewController: UIViewController {
         return imageView
     }()
 
-    // MARK: - Public Properties
-
-    let imageName: String! = nil
-
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
@@ -30,12 +26,17 @@ final class FullScreenPostViewController: UIViewController {
         setupUI()
     }
 
+    // MARK: - Public Methods
+
+    func setFullScreenImage(image: UIImage) {
+        imageView.image = image
+    }
+
     // MARK: - Private Methods
 
     private func setupUI() {
         view.backgroundColor = .white
         view.addSubview(imageView)
-        imageView.image = UIImage(named: Constants.defaultImageName)
         setImageViewConstraints()
     }
 

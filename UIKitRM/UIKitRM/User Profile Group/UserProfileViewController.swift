@@ -83,12 +83,12 @@ final class UserProfileViewController: UIViewController {
     ]
 
     private let savedStories: [SavedStory] = [
-        SavedStory(title: "Запуск", coverImageName: "cosmo1"),
-        SavedStory(title: "Луна", coverImageName: "cosmo2"),
-        SavedStory(title: "Космонавт", coverImageName: "cosmo1"),
-        SavedStory(title: "Космос", coverImageName: "cosmo4"),
-        SavedStory(title: "Voyagers", coverImageName: "cosmo1"),
-        SavedStory(title: "Венера", coverImageName: "cosmo2")
+        SavedStory(title: "Запуск", coverImageName: "cosmo1", storyImageName: "nebula"),
+        SavedStory(title: "Луна", coverImageName: "cosmo2", storyImageName: "milky way"),
+        SavedStory(title: "Космонавт", coverImageName: "cosmo1", storyImageName: "nebula"),
+        SavedStory(title: "Космос", coverImageName: "cosmo4", storyImageName: "milky way"),
+        SavedStory(title: "Voyagers", coverImageName: "cosmo1", storyImageName: "nebula"),
+        SavedStory(title: "Венера", coverImageName: "cosmo2", storyImageName: "milky way")
     ]
 
     // MARK: - Life Cycle
@@ -186,6 +186,12 @@ extension UserProfileViewController: UITableViewDataSource {
                 for: indexPath
             ) as? SavedStoriesTableViewCell else { return UITableViewCell() }
             cell.configure(savedStories: savedStories)
+            cell.openStoryHandler = { [weak self] story in
+                let controllerToMove = SavedStoryViewController()
+                controllerToMove.setStory(story: story)
+                controllerToMove.modalPresentationStyle = .fullScreen
+                self?.present(controllerToMove, animated: true)
+            }
             return cell
         case .postsCollection:
             guard let cell = tableView.dequeueReusableCell(

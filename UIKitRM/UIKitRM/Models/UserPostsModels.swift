@@ -45,6 +45,8 @@ struct SavedStory {
     let title: String
     /// Имя картинки-обложки
     let coverImageName: String
+    /// Сххраненная история
+    let storyImageName: String
 }
 
 /// Наполнение ячеек рекомендованные аккаунты

@@ -10,6 +10,10 @@ final class SavedStoryView: UIView {
         static let verdanaFontName = "Verdana"
     }
 
+    // MARK: - Public Properties
+
+    var openStoryHandler: (() -> ())?
+
     // MARK: - Visual Components
 
     private let coverImageView: UIImageView = {
@@ -52,6 +56,10 @@ final class SavedStoryView: UIView {
         coverImageView.image = UIImage(named: imageName)
     }
 
+    func coverImage() -> UIImage? {
+        coverImageView.image ?? UIImage(named: "cosmo1")
+    }
+
     // MARK: - Private Methods
 
     private func setupView() {
@@ -60,6 +68,7 @@ final class SavedStoryView: UIView {
         addSubview(titleLabel)
         translatesAutoresizingMaskIntoConstraints = false
         setupConstraints()
+        addAction()
     }
 
     private func setupConstraints() {
@@ -72,5 +81,15 @@ final class SavedStoryView: UIView {
         titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 4).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -4).isActive = true
         titleLabel.heightAnchor.constraint(equalToConstant: 12).isActive = true
+    }
+
+    private func addAction() {
+        isUserInteractionEnabled = true
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(openStory))
+        addGestureRecognizer(gestureRecognizer)
+    }
+
+    @objc private func openStory() {
+        openStoryHandler?()
     }
 }

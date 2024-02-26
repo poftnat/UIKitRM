@@ -20,6 +20,10 @@ final class SavedStoriesTableViewCell: UITableViewCell {
         return scrollView
     }()
 
+    // MARK: - Public Properties
+
+    var openStoryHandler: ((_: SavedStory) -> ())?
+
     // MARK: - Initializers
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -40,6 +44,7 @@ final class SavedStoriesTableViewCell: UITableViewCell {
             view.setCoverImage(imageName: story.coverImageName)
             view.setTitle(story.title)
             storiesScrollView.addSubview(view)
+            view.tag = index
 
             view.centerYAnchor.constraint(equalTo: storiesScrollView.centerYAnchor).isActive = true
             view.widthAnchor.constraint(equalToConstant: 65).isActive = true
@@ -49,6 +54,9 @@ final class SavedStoriesTableViewCell: UITableViewCell {
             ).isActive = true
             if index == savedStories.count - 1 {
                 view.trailingAnchor.constraint(equalTo: storiesScrollView.trailingAnchor, constant: -2).isActive = true
+            }
+            view.openStoryHandler = { [weak self] in
+                self?.openStoryHandler?(story)
             }
         }
     }
