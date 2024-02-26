@@ -15,12 +15,6 @@ final class EntryViewController: UIViewController {
         case 1:
             let controllerToMove = AnchorsViewController()
             navigationController?.pushViewController(controllerToMove, animated: true)
-        case 2:
-            let controllerToMove = ConstraintsViewController()
-            navigationController?.pushViewController(controllerToMove, animated: true)
-        case 3:
-            let controllerToMove = VFLViewController()
-            navigationController?.pushViewController(controllerToMove, animated: true)
         default:
             break
         }
