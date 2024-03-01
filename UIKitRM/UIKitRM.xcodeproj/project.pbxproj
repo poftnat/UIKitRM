@@ -7,23 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F32350E2B79EAA8004BD9FF /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F32350D2B79EAA8004BD9FF /* Extension+UIView.swift */; };
+		4F3235102B79F024004BD9FF /* Extension+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F32350F2B79F024004BD9FF /* Extension+UILabel.swift */; };
 		4F892A0E2B74058F000C0783 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F892A0D2B74058F000C0783 /* AppDelegate.swift */; };
 		4F892A102B74058F000C0783 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F892A0F2B74058F000C0783 /* SceneDelegate.swift */; };
-		4F892A122B74058F000C0783 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F892A112B74058F000C0783 /* ViewController.swift */; };
-		4F892A152B74058F000C0783 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F892A132B74058F000C0783 /* Main.storyboard */; };
+		4F892A122B74058F000C0783 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F892A112B74058F000C0783 /* EntryViewController.swift */; };
 		4F892A172B740591000C0783 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F892A162B740591000C0783 /* Assets.xcassets */; };
-		4F892A1A2B740591000C0783 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F892A182B740591000C0783 /* LaunchScreen.storyboard */; };
+		4FA8FDBF2B76AD36000CD802 /* Verdana-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA8FDBE2B76AD36000CD802 /* Verdana-Bold.ttf */; };
+		4FA8FDC12B76CF99000CD802 /* BirthdayListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA8FDC02B76CF99000CD802 /* BirthdayListViewController.swift */; };
+		4FA8FDC32B76F635000CD802 /* AddBirthdayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA8FDC22B76F635000CD802 /* AddBirthdayViewController.swift */; };
+		4FA8FDC62B781961000CD802 /* BirthdayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA8FDC52B781961000CD802 /* BirthdayModel.swift */; };
+		4FA8FDC82B7828ED000CD802 /* Verdana.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4FA8FDC72B7828ED000CD802 /* Verdana.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F32350D2B79EAA8004BD9FF /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
+		4F32350F2B79F024004BD9FF /* Extension+UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UILabel.swift"; sourceTree = "<group>"; };
 		4F892A0A2B74058F000C0783 /* UIKitRM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitRM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F892A0D2B74058F000C0783 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F892A0F2B74058F000C0783 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4F892A112B74058F000C0783 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4F892A142B74058F000C0783 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4F892A112B74058F000C0783 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		4F892A162B740591000C0783 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4F892A192B740591000C0783 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F892A1B2B740591000C0783 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FA8FDBE2B76AD36000CD802 /* Verdana-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Verdana-Bold.ttf"; sourceTree = "<group>"; };
+		4FA8FDC02B76CF99000CD802 /* BirthdayListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayListViewController.swift; sourceTree = "<group>"; };
+		4FA8FDC22B76F635000CD802 /* AddBirthdayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBirthdayViewController.swift; sourceTree = "<group>"; };
+		4FA8FDC52B781961000CD802 /* BirthdayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayModel.swift; sourceTree = "<group>"; };
+		4FA8FDC72B7828ED000CD802 /* Verdana.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Verdana.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +66,36 @@
 		4F892A0C2B74058F000C0783 /* UIKitRM */ = {
 			isa = PBXGroup;
 			children = (
+				4FA8FDC42B781947000CD802 /* Model */,
 				4F892A0D2B74058F000C0783 /* AppDelegate.swift */,
 				4F892A0F2B74058F000C0783 /* SceneDelegate.swift */,
-				4F892A112B74058F000C0783 /* ViewController.swift */,
-				4F892A132B74058F000C0783 /* Main.storyboard */,
+				4F892A112B74058F000C0783 /* EntryViewController.swift */,
+				4FA8FDC02B76CF99000CD802 /* BirthdayListViewController.swift */,
+				4FA8FDC22B76F635000CD802 /* AddBirthdayViewController.swift */,
+				4F32350D2B79EAA8004BD9FF /* Extension+UIView.swift */,
+				4F32350F2B79F024004BD9FF /* Extension+UILabel.swift */,
 				4F892A162B740591000C0783 /* Assets.xcassets */,
-				4F892A182B740591000C0783 /* LaunchScreen.storyboard */,
+				4FA8FDBD2B76AD0B000CD802 /* Fonts */,
 				4F892A1B2B740591000C0783 /* Info.plist */,
 			);
 			path = UIKitRM;
+			sourceTree = "<group>";
+		};
+		4FA8FDBD2B76AD0B000CD802 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4FA8FDC72B7828ED000CD802 /* Verdana.ttf */,
+				4FA8FDBE2B76AD36000CD802 /* Verdana-Bold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		4FA8FDC42B781947000CD802 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4FA8FDC52B781961000CD802 /* BirthdayModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,9 +158,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F892A1A2B740591000C0783 /* LaunchScreen.storyboard in Resources */,
 				4F892A172B740591000C0783 /* Assets.xcassets in Resources */,
-				4F892A152B74058F000C0783 /* Main.storyboard in Resources */,
+				4FA8FDBF2B76AD36000CD802 /* Verdana-Bold.ttf in Resources */,
+				4FA8FDC82B7828ED000CD802 /* Verdana.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,32 +214,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F892A122B74058F000C0783 /* ViewController.swift in Sources */,
+				4F3235102B79F024004BD9FF /* Extension+UILabel.swift in Sources */,
+				4F32350E2B79EAA8004BD9FF /* Extension+UIView.swift in Sources */,
+				4FA8FDC62B781961000CD802 /* BirthdayModel.swift in Sources */,
+				4F892A122B74058F000C0783 /* EntryViewController.swift in Sources */,
+				4FA8FDC32B76F635000CD802 /* AddBirthdayViewController.swift in Sources */,
 				4F892A0E2B74058F000C0783 /* AppDelegate.swift in Sources */,
+				4FA8FDC12B76CF99000CD802 /* BirthdayListViewController.swift in Sources */,
 				4F892A102B74058F000C0783 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		4F892A132B74058F000C0783 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4F892A142B74058F000C0783 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		4F892A182B740591000C0783 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4F892A192B740591000C0783 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4F892A1C2B740591000C0783 /* Debug */ = {
@@ -342,7 +359,6 @@
 				INFOPLIST_FILE = UIKitRM/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -370,7 +386,6 @@
 				INFOPLIST_FILE = UIKitRM/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
